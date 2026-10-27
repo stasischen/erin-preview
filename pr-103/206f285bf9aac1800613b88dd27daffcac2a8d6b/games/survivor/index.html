@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%232389b5%27/%3E%3C/svg%3E">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#142331" />
+  <title>小怪獸</title>
+  <link rel="stylesheet" href="style.css?v=20261027i" />
+  <link rel="stylesheet" href="maker/style.css?v=20261027i" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="back" aria-label="回遊戲樂園" title="回遊戲樂園" href="../../"><span aria-hidden="true"><span data-icon="home" aria-hidden="true"></span></span></a>
+      <h1><span data-icon="monster" aria-hidden="true"></span> 小怪獸</h1>
+      <button id="pauseButton" class="pause-button" type="button" aria-label="暫停與設定" title="暫停與設定"><span data-icon="settings" aria-hidden="true"></span></button>
+    </header>
+    <section class="stage" id="stage" aria-label="遊戲畫面">
+      <canvas id="gameCanvas" aria-label="藍色水星人在甜點森林躲避小怪獸"></canvas>
+      <div id="bossHud" class="boss-hud" hidden><div id="postureGauge" class="posture-gauge" role="progressbar" aria-label="老師架勢" aria-valuemin="0" aria-valuemax="100" title="老師架勢"><span data-icon="posture" aria-hidden="true"></span></div><strong id="bossName">老師</strong><div class="boss-track"><div id="bossHealthFill" class="boss-health-fill"></div></div></div>
+      <div class="hud" aria-live="polite">
+        <div class="health-wrap"><span class="health-label"><span data-icon="health" aria-hidden="true"></span>血條</span><div class="health-track"><div id="healthFill" class="health-fill"></div></div></div>
+        <div class="experience-wrap"><span class="experience-label"><span data-icon="gem" aria-hidden="true"></span>經驗</span><div class="experience-track"><div id="experienceFill" class="experience-fill"></div></div><span id="levelLabel" class="level-label">Lv.1</span></div>
+        <span id="status" class="status">準備開始</span>
+      </div>
+      <div id="enemyNotice" class="enemy-notice" role="status" hidden></div>
+      <div id="actionControls" class="action-controls" hidden aria-label="動作按鈕"><button id="attackButton" class="action-button attack-button" type="button" aria-label="普攻：點按攻擊，按住聚氣，拖曳瞄準"><span></span></button><button id="specialButton" class="action-button special-button" type="button" aria-label="特殊：按住拖曳，放開出招"><span></span></button>
+        <button id="skillButton" aria-label="泡泡炸彈" class="action-button skill-button" type="button"><span aria-hidden="true"><span data-icon="skill" aria-hidden="true"></span></span></button>
+        <button id="dashButton" aria-label="衝刺" class="action-button dash-button" type="button"><span aria-hidden="true"><span data-icon="dash" aria-hidden="true"></span></span></button>
+      </div>
+      <div id="overlay" class="overlay">
+        <section id="trialConfirm" class="trial-confirm" hidden role="dialog" aria-modal="true" aria-labelledby="trialConfirmTitle">
+          <h2 id="trialConfirmTitle">離開這一局？</h2>
+          <div class="trial-confirm-actions">
+            <button id="trialConfirmYes" class="settings-action" type="button" aria-label="確定離開" title="確定離開"><span data-icon="confirm" aria-hidden="true"></span></button>
+            <button id="trialConfirmNo" class="settings-action" type="button" aria-label="取消，保留這一局" title="取消"><span data-icon="close" aria-hidden="true"></span></button>
+          </div>
+        </section>
+        <section id="trialPanel" class="trial-panel" hidden aria-label="王的試煉選單">
+          <h2 id="trialTitle">王的試煉</h2><div id="trialChoices" class="trial-choices"></div>
+          <button id="trialBack" class="settings-action" type="button" aria-label="回開始畫面" title="回開始畫面"><span data-icon="home" aria-hidden="true"></span></button>
+        </section>
+        <section id="upgradePanel" class="upgrade-panel" hidden aria-label="選擇升級">
+          <h2 id="upgradeHeading">升級了！選一張卡</h2>
+          <p>點圖示看效果・雙點確認｜1、2、3</p>
+          <div id="upgradeCards" class="upgrade-cards" role="group" aria-label="可選的升級卡"></div>
+          <div class="upgrade-workspace">
+            <div id="upgradeDetails" class="upgrade-details" aria-live="polite">
+              <h3 id="upgradeName"></h3><p id="upgradeDescription"></p>
+              <p id="upgradeLevel"></p><p id="upgradeRequirements"></p>
+            </div>
+            <div id="upgradePreview" class="skill-preview-host"></div>
+          </div>
+          <div class="upgrade-actions">
+            <button id="confirmUpgrade" type="button" class="settings-action settings-done" aria-label="選這張卡" title="選這張卡"><span data-icon="confirm" aria-hidden="true"></span></button>
+            <button id="rerollUpgrade" type="button" class="settings-action" aria-label="重抽升級卡" title="重抽升級卡"><span data-icon="reroll" aria-hidden="true"></span><span id="rerollCount" class="reroll-count" aria-hidden="true"></span></button>
+            <details class="tree-details"><summary aria-label="查看或關閉技能樹" title="查看或關閉技能樹"><span data-icon="skill-tree" aria-hidden="true"></span></summary><div id="skillTree" class="skill-tree"></div></details>
+          </div>
+        </section>
+        <section id="settingsPanel" class="settings-panel" hidden aria-label="遊戲設定">
+          <h2><span data-icon="settings" aria-hidden="true"></span> 遊戲設定</h2>
+          <p>調整後會自動記住這台裝置的設定。</p>
+          <button id="pauseAttackMode" class="attack-mode-toggle" type="button" role="switch" aria-label="手動攻擊" aria-checked="true"><span class="mode-pixel" aria-hidden="true"></span><span>攻擊：手動／自動</span></button>
+          <div id="settingsControls" class="settings-controls"></div>
+          <div class="settings-toggles">
+            <button id="soundToggle" class="settings-action audio-toggle" type="button"></button>
+            <button id="musicToggle" class="settings-action audio-toggle" type="button"></button>
+            <button id="vibrationToggle" class="settings-action" type="button"></button>
+          </div>
+          <div class="settings-actions">
+            <button id="resetSettingsButton" class="settings-action" type="button">恢復預設</button>
+            <button id="closeSettingsButton" class="settings-action settings-done" type="button">完成</button>
+          </div>
+        </section>
+        <div class="message-card">
+          <div id="messageIcon" class="message-icon" aria-hidden="true"><span data-icon="onion-dash" aria-hidden="true"></span></div>
+          <h2 id="messageTitle">小怪獸</h2>
+          <p id="messageText">用方向鍵、WASD 或手指搖桿移動，躲開甲本！</p>
+          <button id="trialEntry" class="settings-action trial-entry" type="button" aria-label="王的試煉" title="王的試煉"><span data-icon="boss" aria-hidden="true"></span></button>
+          <button id="makerLink" class="settings-action menu-settings" type="button"><span data-icon="maker" aria-hidden="true"></span> 自己設計</button>
+          <button id="settingsButton" class="settings-action menu-settings gear-button" type="button" aria-label="設定" title="設定"><span data-icon="settings" aria-hidden="true"></span></button>
+          <div id="pauseBuild" class="pause-build" hidden>
+          <h3>本局四欄位與已取得卡片</h3>
+          <div id="buildSlots" class="build-slots" aria-label="本局四欄位"></div><div id="ownedPreview" class="skill-preview-host"></div>
+          <details class="tree-details"><summary>技能樹、合體卡與終極卡前置條件</summary><p>卡片依作品設定等級上限；同流派 3 張變身、5 張解鎖終極；雙流派各 2 張解鎖合體。</p><div id="settingsSkillTree" class="skill-tree"></div></details>
+          </div>
+          <button id="startButton" class="start-button" type="button">開始遊戲</button>
+        </div>
+      </div>
+      <section id="makerPanel" class="maker-room" hidden aria-label="自己設計">
+        <header class="maker-toolbar"><strong><span data-icon="maker" aria-hidden="true"></span> 自己設計</strong><button id="save" type="button" aria-label="儲存作品"><span data-icon="save" aria-hidden="true"></span></button><button id="reset" type="button">恢復預設</button><button id="makerClose" type="button" aria-label="回開始選單"><span data-icon="close" aria-hidden="true"></span></button></header>
+        <nav class="maker-tabs" aria-label="設計分頁"><button data-tab="weapons" type="button"><span data-icon="attack" aria-hidden="true"></span> 武器</button><button data-tab="cards" type="button"><span data-icon="tree" aria-hidden="true"></span> 技能卡</button><button data-tab="enemies" type="button"><span data-icon="monster" aria-hidden="true"></span> 怪物</button><button data-tab="boss" type="button"><span data-icon="boss" aria-hidden="true"></span> 老師</button><button data-tab="stages" type="button"><span data-icon="play" aria-hidden="true"></span> 關卡</button><button data-tab="rules" type="button"><span data-icon="numbers" aria-hidden="true"></span> 規則</button></nav>
+        <div id="editor" class="maker-editor"></div>
+        <footer class="maker-footer"><p id="makerStatus" role="status" aria-live="polite"></p><button id="play" class="start-button" type="button"><span data-icon="play" aria-hidden="true"></span> 試玩</button></footer>
+      </section>
+    </section>
+    <footer class="help">移動：方向鍵／WASD／搖桿　空白鍵：衝刺　E：泡泡炸彈　Esc：暫停</footer>
+  </main>
+  <script src="icons.js?v=20261027i"></script>
+  <script>document.querySelectorAll("[data-icon]").forEach(node => SurvivorIcons.set(node, node.dataset.icon));</script>
+  <script src="data/defaults.js?v=20261027i"></script>
+  <script src="data/schema.js?v=20261027i"></script>
+  <script src="preview.js?v=20261027i"></script>
+  <script src="manifest.js?v=20261027i"></script><script src="game.js?v=20261027i"></script>
+  <script src="practice-host.js?v=20261027i"></script>
+  <script src="maker/maker.js?v=20261027i"></script>
+  <script src="../../register-sw.js" defer></script>
+</body>
+</html>

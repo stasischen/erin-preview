@@ -1,0 +1,187 @@
+--- source/games/survivor/data/schema.js
++++ deployed/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/data/schema.js
+@@ -1,7 +1,7 @@
+ // 共用格式、安全界線與本機儲存。只有明列的欄位可以進入引擎；不執行輸入的程式碼。
+ (function (root) {
+   'use strict';
+-  const KEY = 'erin-survivor-maker-v1';
++  const KEY = 'erin-preview:pr-103:206f285bf9aac1800613b88dd27daffcac2a8d6b:erin-survivor-maker-v1';
+   const copy = value => JSON.parse(JSON.stringify(value));
+   const TYPES = { projectile: '發射水球', aoe: '範圍傷害', chain: '連鎖閃電', 'dash-trail': '留下痕跡', slow: '緩速', stun: '暈眩', knockback: '擊退', summon: '召喚小幫手', 'ring-with-gap': '留缺口的圈' };
+   const KINDS = { words: '國字扇形', chalk: '粉筆連發', dash: '直線衝撞', rain: '多點範圍', call: '單點範圍', summon: '召喚', ring: '留缺口的圈', wall: '粉筆牆', cage: '衝刺縮圈', leap:'跳上講台',sniper:'粉筆狙擊',barriers:'黑板封路',combo:'黑板擦連衝',tracking:'點名追蹤' };
+
+--- source/games/survivor/engine/state.js
++++ deployed/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/engine/state.js
+@@ -21,9 +21,9 @@
+ // ✏️ Erin 可以改：技能閃光最多同時幾個；閃電留幾秒（建議 0.15～0.25）。
+ const VFX_TUNING = { limit: 48, lightningSeconds: 0.22 };
+ const BUILD_SLOTS = { attack: "普攻", skill: "技能", dash: "衝刺", passive: "被動" };
+-const SETTINGS_KEY = "erin-survivor-settings-v3";
+-const PLAYER_SETTINGS_KEY = "erin-survivor-player-settings-v1";
+-const RECORD_KEY = MAKER_MODE ? "erin-survivor-maker-best-seconds-v1" : "erin-survivor-best-seconds-v1";
++const SETTINGS_KEY = "erin-preview:pr-103:206f285bf9aac1800613b88dd27daffcac2a8d6b:erin-survivor-settings-v3";
++const PLAYER_SETTINGS_KEY = "erin-preview:pr-103:206f285bf9aac1800613b88dd27daffcac2a8d6b:erin-survivor-player-settings-v1";
++const RECORD_KEY = MAKER_MODE ? "erin-preview:pr-103:206f285bf9aac1800613b88dd27daffcac2a8d6b:erin-survivor-maker-best-seconds-v1" : "erin-preview:pr-103:206f285bf9aac1800613b88dd27daffcac2a8d6b:erin-survivor-best-seconds-v1";
+ const SETTING_DEFAULTS = {
+   playerSpeed: UPGRADE_TUNING.playerSpeed, playerHealth: UPGRADE_TUNING.playerHealth,
+   enemySpeed: GAME_DATA.enemies[0].speed, enemyHealth: GAME_DATA.enemies[0].hp,
+
+--- source/games/survivor/index.html
++++ deployed/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/index.html
+@@ -1,16 +1,13 @@
+ <!doctype html>
+ <html lang="zh-Hant">
+ <head>
++  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%232389b5%27/%3E%3C/svg%3E">
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+   <meta name="theme-color" content="#142331" />
+   <title>小怪獸</title>
+   <link rel="stylesheet" href="style.css?v=20261027i" />
+   <link rel="stylesheet" href="maker/style.css?v=20261027i" />
+-  <link rel="manifest" href="../../manifest.webmanifest" />
+-  <link rel="apple-touch-icon" href="../../assets/icon-192.png" />
+-  <meta name="apple-mobile-web-app-capable" content="yes" />
+-  <meta name="apple-mobile-web-app-title" content="Erin 的遊戲" />
+ </head>
+ <body>
+   <main class="game-shell">
+
+--- source/register-sw.js
++++ deployed/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/register-sw.js
+@@ -1,7 +1 @@
+-if ('serviceWorker' in navigator) {
+-  window.addEventListener('load', () => {
+-    navigator.serviceWorker.register('/erin/sw.js', { scope: '/erin/' }).catch((error) => {
+-      console.warn('Service worker registration failed:', error);
+-    });
+-  });
+-}
++// Static candidate preview: service worker registration intentionally disabled.
+
+--- generated/no-source
++++ deployed/index.html
+@@ -0,0 +1,7 @@
++<!doctype html>
++<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Erin 測試版 PR 103</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%232389b5%27/%3E%3C/svg%3E">
++<style>body{font:18px system-ui;max-width:56rem;margin:3rem auto;padding:0 1rem;color:#142331}code{overflow-wrap:anywhere}a{color:#075d9b}li{margin:.8rem 0}.test{padding:1rem;background:#fff0cc;border:2px solid #b67a15}</style></head><body>
++<h1>Erin 公開測試版</h1><p class="test">未合併測試版：此快照供審查與試玩，不代表正式版本。</p>
++<ul><li>PR：<a href="https://github.com/stasischen/erin/pull/103">#103</a></li><li>版本：<code>20261027i</code></li><li>來源 SHA：<code>206f285bf9aac1800613b88dd27daffcac2a8d6b</code></li><li><a href="./pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/">開始試玩此候選版本</a></li><li><a href="./pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/preview-manifest.json">來源與部署檔案 hash／變換清單</a></li></ul>
++<p>設定、Maker 作品與紀錄依 PR／SHA 隔離；此測試版不註冊 Service Worker，不提供安裝或離線功能。</p>
++<p><a href="https://stasischen.github.io/erin/" target="_blank" rel="noopener noreferrer">正式站（外部連結，另開分頁）</a></p></body></html>
+
+--- source/index.html
++++ deployed/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/index.html
+@@ -1,90 +1,7 @@
+ <!doctype html>
+-<html lang="zh-Hant">
+-  <head>
+-    <meta charset="UTF-8" />
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <meta name="theme-color" content="#dff4ff" />
+-    <meta name="apple-mobile-web-app-capable" content="yes" />
+-    <meta name="apple-mobile-web-app-title" content="Erin 的遊戲" />
+-    <link rel="manifest" href="/erin/manifest.webmanifest" />
+-    <link rel="apple-touch-icon" href="/erin/assets/icon-192.png" />
+-    <title>Erin 的遊戲樂園</title>
+-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+-    <link rel="stylesheet" href="style.css" />
+-  </head>
+-  <body>
+-    <main class="portal">
+-      <header class="portal-header">
+-        <h1>🌟 Erin 的遊戲樂園 🌟</h1>
+-        <p>選一個遊戲來玩吧！</p>
+-      </header>
+-
+-      <section class="game-grid" id="gameGrid">
+-        <a href="games/ice-cream-stacker/" class="game-card" style="--card-color: #ff8eb2">
+-          <span class="game-icon">🍦</span>
+-          <span class="game-title">冰淇淋甜筒店</span>
+-          <span class="game-desc">接住冰淇淋球，疊出漂亮甜筒！</span>
+-        </a>
+-
+-        <a href="games/mario-like/" class="game-card" style="--card-color: #ef4444">
+-          <span class="game-icon">🏃</span>
+-          <span class="game-title">小冒險家</span>
+-          <span class="game-desc">跳過平台，收集金幣！</span>
+-        </a>
+-
+-        <a href="games/rhythm-memory/" class="game-card" style="--card-color: #a78bfa">
+-          <span class="game-icon">🎮</span>
+-          <span class="game-title">節奏記憶</span>
+-          <span class="game-desc">記住順序，照著按一遍！</span>
+-        </a>
+-
+-        <a href="games/pet-care/" class="game-card" style="--card-color: #f9a8d4">
+-          <span class="game-icon">🐱</span>
+-          <span class="game-title">寵物養成</span>
+-          <span class="game-desc">餵食、洗澡、玩耍，照顧你的小寵物！</span>
+-        </a>
+-
+-        <a href="games/piano/" class="game-card" style="--card-color: #fbbf24">
+-          <span class="game-icon">🎹</span>
+-          <span class="game-title">小小鋼琴家</span>
+-          <span class="game-desc">彈鋼琴，錄下來再播放！</span>
+-        </a>
+-
+-        <a href="games/garden/" class="game-card" style="--card-color: #4ade80">
+-          <span class="game-icon">🪴</span>
+-          <span class="game-title">種菜小園丁</span>
+-          <span class="game-desc">種菜、澆水、收成！</span>
+-        </a>
+-
+-        <a href="games/clown-catch/" class="game-card" style="--card-color: #f97316">
+-          <span class="game-icon">🎪</span>
+-          <span class="game-title">小丑拋接球</span>
+-          <span class="game-desc">移動小丑接住掉落的球！</span>
+-        </a>
+-
+-        <a href="games/racing/" class="game-card" style="--card-color: #10b981">
+-          <span class="game-icon">🏎️</span>
+-          <span class="game-title">小飆車手</span>
+-          <span class="game-desc">賽車比賽，吃道具攻擊對手！</span>
+-        </a>
+-
+-        <a href="games/survivor/" class="game-card" style="--card-color: #60a5fa">
+-          <span class="game-icon">👾</span>
+-          <span class="game-title">小怪獸</span>
+-          <span class="game-desc">操控水星人躲開甲本、升級水球，打敗老師！</span>
+-        </a>
+-
+-        <div class="game-card game-card--empty">
+-          <span class="game-icon">➕</span>
+-          <span class="game-title">新遊戲準備中</span>
+-          <span class="game-desc">等你設計下一个遊戲！</span>
+-        </div>
+-      </section>
+-
+-      <footer class="portal-footer">
+-        <p>✨ 每個遊戲都是 Erin 自己設計的 ✨</p>
+-      </footer>
+-    </main>
+-    <script src="/erin/register-sw.js" defer></script>
+-  </body>
+-</html>
++<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Erin 測試版 PR 103</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%232389b5%27/%3E%3C/svg%3E">
++<style>body{font:18px system-ui;max-width:56rem;margin:3rem auto;padding:0 1rem;color:#142331}code{overflow-wrap:anywhere}a{color:#075d9b}li{margin:.8rem 0}.test{padding:1rem;background:#fff0cc;border:2px solid #b67a15}</style></head><body>
++<h1>Erin 公開測試版</h1><p class="test">未合併測試版：此快照供審查與試玩，不代表正式版本。</p>
++<ul><li>PR：<a href="https://github.com/stasischen/erin/pull/103">#103</a></li><li>版本：<code>20261027i</code></li><li>來源 SHA：<code>206f285bf9aac1800613b88dd27daffcac2a8d6b</code></li><li><a href="./games/survivor/">開始試玩此候選版本</a></li><li><a href="./preview-manifest.json">來源與部署檔案 hash／變換清單</a></li></ul>
++<p>設定、Maker 作品與紀錄依 PR／SHA 隔離；此測試版不註冊 Service Worker，不提供安裝或離線功能。</p>
++<p><a href="https://stasischen.github.io/erin/" target="_blank" rel="noopener noreferrer">正式站（外部連結，另開分頁）</a></p></body></html>
+
+
+--- generated/no-source
++++ deployed/README.md
+@@ -0,0 +1,11 @@
++# Erin public preview
++
++This directory is a prepared static Pages payload for PR #103, source `206f285bf9aac1800613b88dd27daffcac2a8d6b`, version `20261027i`.
++
++Candidate URL: https://stasischen.github.io/erin-preview/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/
++
++Publish these prepared files as the Pages branch contents for `stasischen/erin-preview`; do not run source scripts or add CI workflows. The source game repository and its main branch are unchanged by this payload.
++
++The landing pages identify the candidate and link explicitly to the production site. Game viewport and HUD are unchanged. Five storage key literals use a PR-and-full-SHA prefix. Service worker registration and PWA installation references are disabled only in this snapshot; no production worker is unregistered and no cache is deleted. Source `sw.js` and `manifest.webmanifest` are intentionally omitted.
++
++The candidate `preview-manifest.json` lists original and deployed SHA-256 values, allowed transforms, omitted PWA files, and the source storage audit. Its detached `.sha256` covers the manifest itself. `adapter-diff.patch` uses only logical source/deployed paths. No private coordination data, screenshots, logs, tests, tools, Git metadata or workflow files belong in this publication.
