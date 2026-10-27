@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Erin 固定 viewport 驗證頁 v2</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3E%3Crect width=%2716%27 height=%2716%27 fill=%27%232389b5%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="lab.css">
+  <script src="lab.js" defer></script>
+</head>
+<body>
+  <header id="lab-top">
+    <h1>固定 iframe viewport 驗證頁 v2</h1>
+    <p>供 Dot 雲端瀏覽器直接操作候選遊戲；這是 iframe 的真實 CSS viewport，頂層瀏覽器大小維持原樣。外頁可水平／垂直捲動，遊戲不縮放。</p>
+    <form method="get">
+      <label>PR <input id="pr" name="pr" inputmode="numeric" pattern="[1-9][0-9]*" required></label>
+      <label>來源 SHA <input id="sha" name="sha" pattern="[0-9a-f]{40}" minlength="40" maxlength="40" required></label>
+      <label>iframe 尺寸 <select id="size" name="size"><option>1024x461</option><option>740x360</option><option>1180x820</option></select></label>
+      <button type="submit">開啟此尺寸</button>
+      <button id="measure" type="button">重新量測</button>
+      <button id="exit-fullscreen" type="button" disabled>退出原生全螢幕</button>
+    </form>
+    <p id="identity" role="status">請提供 PR、完整來源 SHA 與尺寸。</p>
+    <p id="top-metrics"></p>
+    <p id="frame-metrics">iframe 尚未載入。</p>
+    <p id="canvas-metrics"></p>
+    <p id="status" role="status"></p>
+    <p id="fullscreen-note">只有沒有原生 Fullscreen API 狀態、且 iframe 實測尺寸正確時，才能記為該固定尺寸。若遊戲自行進入原生全螢幕，先按 Esc 退出，再重新量測。</p>
+    <p><a id="direct" hidden target="_blank" rel="noopener noreferrer">直接開固定候選（另開分頁，使用該分頁實際 viewport）</a> <a id="proof" hidden target="_blank" rel="noopener noreferrer">候選 manifest</a></p>
+    <nav aria-label="外頁觀察導覽"><a id="look-bottom" href="#frame-end">捲外頁看下側控制</a></nav>
+  </header>
+  <main id="frame-host" aria-label="固定尺寸候選遊戲"></main>
+  <footer id="frame-end"><a id="look-top" href="#lab-top">回到量測／看上方 HUD</a><p>這是遊戲外的普通頁面連結；不縮放 iframe。游標在遊戲內滾動可能被來源攔住，請用此外頁連結往返。</p></footer>
+</body>
+</html>
