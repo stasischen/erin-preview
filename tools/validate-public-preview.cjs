@@ -6,6 +6,10 @@ assert.ok(stageArg&&otherArg&&reportArg,'Usage: node validate-public-preview.cjs
 const stage=path.resolve(stageArg),other=path.resolve(otherArg),reportPath=path.resolve(reportArg);
 const findManifest=root=>{const scan=dir=>fs.readdirSync(dir,{withFileTypes:true}).flatMap(d=>d.isDirectory()?scan(path.join(dir,d.name)):[path.join(dir,d.name)]);const files=scan(root).filter(f=>f.endsWith('/preview-manifest.json'));assert.equal(files.length,1);return JSON.parse(fs.readFileSync(files[0],'utf8'));};
 const A=findManifest(stage),B=findManifest(other);assert.notEqual(A.storage_prefix,B.storage_prefix);
+assert.deepEqual(Object.keys(A.storage_keys).sort(),Object.keys(B.storage_keys).sort(),'A/B stages must use the same audited storage profile');
+const trialKeys=['erin-survivor-trial-best-seconds-v1','erin-survivor-maker-trial-best-seconds-v1'];
+const hasTrialRecords=trialKeys.every(key=>Object.hasOwn(A.storage_keys,key));
+assert.equal(trialKeys.some(key=>Object.hasOwn(A.storage_keys,key)),hasTrialRecords,'Partial trial record storage profile');
 const requests=[],browserErrors=[],consoleErrors=[],badResponses=[];
 const worker=`self.addEventListener('install',()=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(self.clients.claim()));`;
 const types={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.md':'text/plain; charset=utf-8','.patch':'text/plain; charset=utf-8'};
@@ -65,7 +69,8 @@ const sha256=raw=>crypto.createHash('sha256').update(raw).digest('hex');
   const data={${JSON.stringify(Object.keys(A.storage_keys)[0])}:JSON.stringify(work),
    'erin-survivor-settings-v3':JSON.stringify({attackMode:'auto',attackModeChosen:true,sound:false}),
    'erin-survivor-player-settings-v1':JSON.stringify({attackMode:'auto',attackModeChosen:true,sound:false}),
-   'erin-survivor-best-seconds-v1':'987654','erin-survivor-maker-best-seconds-v1':'987655'};
+   'erin-survivor-best-seconds-v1':'987654','erin-survivor-maker-best-seconds-v1':'987655',
+   ...(${hasTrialRecords}?{'erin-survivor-trial-best-seconds-v1':JSON.stringify({gatekeeper:987656}),'erin-survivor-maker-trial-best-seconds-v1':JSON.stringify({gatekeeper:987657})}:{})};
   for(const [key,value] of Object.entries(data))localStorage.setItem(key,value);
   for(const key of Object.keys(localStorage))if(key.startsWith(${JSON.stringify(A.storage_prefix)}))localStorage.removeItem(key);
   const reg=await navigator.serviceWorker.register('/erin/sw.js',{scope:'/erin/'});
@@ -76,6 +81,21 @@ const sha256=raw=>crypto.createHash('sha256').update(raw).digest('hex');
  const requestBoundary=requests.length;
  await navigate(aURL);
  assert.equal(await evaluate('gameSettings.attackMode'),'manual');assert.equal(await evaluate('gameSettings.sound'),true);assert.equal(await evaluate('bestRecord'),0);
+ if(hasTrialRecords){
+  assert.deepEqual(await evaluate('loadTrialRecords(false)'),{});assert.deepEqual(await evaluate('loadTrialRecords(true)'),{});
+  await evaluate('saveTrialRecord("gatekeeper",13,true,false);saveTrialRecord("gatekeeper",23,true,true);true');
+  assert.equal(await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(A.storage_keys[trialKeys[0]])})).gatekeeper`),13);
+  assert.equal(await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(A.storage_keys[trialKeys[1]])})).gatekeeper`),23);
+  await navigate(bURL);assert.deepEqual(await evaluate('loadTrialRecords(false)'),{});assert.deepEqual(await evaluate('loadTrialRecords(true)'),{});
+  await evaluate('saveTrialRecord("gatekeeper",17,true,false);saveTrialRecord("gatekeeper",29,true,true);true');
+  assert.equal(await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(B.storage_keys[trialKeys[0]])})).gatekeeper`),17);
+  assert.equal(await evaluate(`JSON.parse(localStorage.getItem(${JSON.stringify(B.storage_keys[trialKeys[1]])})).gatekeeper`),29);
+  // Fresh navigation resets the in-memory normal/maker caches: both modes must
+  // reload their own persisted map without reading production or candidate B.
+  await navigate(aURL);assert.equal(await evaluate('loadTrialRecords(false).gatekeeper'),13);assert.equal(await evaluate('loadTrialRecords(true).gatekeeper'),23);
+  await navigate(bURL);assert.equal(await evaluate('loadTrialRecords(false).gatekeeper'),17);assert.equal(await evaluate('loadTrialRecords(true).gatekeeper'),29);
+  await navigate(aURL);
+ }
  assert.equal(await evaluate('fetch("version.json").then(r=>r.json()).then(v=>v.version)'),A.version);
  await click('#startButton');await waitFor('state.pickingWeapon===true');await click('#upgradeCards button:first-child');await click('#confirmUpgrade');await waitFor("state.mode==='playing'");
  // One real start and movement input; this is deployment smoke, not gameplay acceptance.
@@ -112,7 +132,7 @@ const sha256=raw=>crypto.createHash('sha256').update(raw).digest('hex');
  const runtimeRequests=requests.slice(requestBoundary);assert.equal(runtimeRequests.some(r=>r.path.startsWith('/erin/')),false,'preview requested production path');
  assert.deepEqual(runtimeRequests.filter(r=>r.status>=400),[]);assert.deepEqual(badResponses,[]);assert.deepEqual(consoleErrors,[]);assert.deepEqual(browserErrors,[]);
  const report={status:'passed',source_commit:A.source_commit,version:A.version,local_url:aURL,http_files_verified:httpFiles,
-  checks:['all published bytes HTTP200 and SHA256 match','candidate deep path starts game and moves','Maker saves under candidate key','settings write candidate modern key','normal and Maker records write candidate keys','candidate legacy migration isolated','A/B candidate Maker/settings/records isolated','all five production key sentinels unchanged','existing /erin/ worker and cache sentinel preserved','no candidate worker/controller or production-root runtime request','Maker return and resolved home navigation stay under candidate','no HTTP404/console error/JS exception'],
+  checks:['all published bytes HTTP200 and SHA256 match','candidate deep path starts game and moves','Maker saves under candidate key','settings write candidate modern key','normal and Maker records write candidate keys','candidate legacy migration isolated','A/B candidate Maker/settings/records isolated',`all ${Object.keys(A.storage_keys).length} production key sentinels unchanged`,...(hasTrialRecords?['normal/Maker per-Boss best records persist across fresh navigation and remain A/B isolated']:[]),'existing /erin/ worker and cache sentinel preserved','no candidate worker/controller or production-root runtime request','Maker return and resolved home navigation stay under candidate','no HTTP404/console error/JS exception'],
   stage_files:httpFiles,production_sentinels_preserved:true,service_worker_unchanged:true,candidate_A:A.source_commit,candidate_B:B.source_commit,
   runtime_requests:runtimeRequests.length,console_errors:consoleErrors,browser_errors:browserErrors,
   scope:'local deployment smoke only; not Dot/browser gameplay acceptance'};

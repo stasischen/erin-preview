@@ -10,6 +10,8 @@ from pathlib import Path
 import re
 import subprocess
 
+from preview_storage_audit import audit_storage
+
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--repo', type=Path, default=Path.home()/'Dev/projects/erin')
 parser.add_argument('--sha', required=True)
@@ -76,41 +78,11 @@ base = f'/erin-preview/{candidate}/'
 prefix = f'erin-preview:pr-{args.pr}:{args.sha}:' + ('' if args.adapter_version == 1 else f'adapter-{args.adapter_version}:')
 url = 'https://stasischen.github.io' + base + 'games/survivor/'
 
-# Five audited literal keys; the legacy settings and both record variants must also isolate.
-key_files = {
-    'games/survivor/data/schema.js': ["erin-survivor-maker-v1"],
-    'games/survivor/engine/state.js': ["erin-survivor-settings-v3", "erin-survivor-player-settings-v1", "erin-survivor-maker-best-seconds-v1", "erin-survivor-best-seconds-v1"]
-}
-storage_uses = []
-for path, raw in originals.items():
-    if Path(path).suffix not in {'.js', '.html'}:
-        continue
-    for number, line in enumerate(raw.decode().splitlines(), 1):
-        if re.search(r'\b(?:localStorage|sessionStorage)\b', line):
-            storage_uses.append({'source_path': path, 'line': number, 'source': line.strip()})
-if {x['source_path'] for x in storage_uses} != {
-        'games/survivor/data/schema.js', 'games/survivor/engine/state.js', 'games/survivor/engine/loop.js'}:
-    raise SystemExit('Storage surface changed; audit required')
-contracts = {
-    'games/survivor/data/schema.js': [('getItem','KEY'),('setItem','KEY')],
-    'games/survivor/engine/loop.js': [('setItem','RECORD_KEY')],
-    'games/survivor/engine/state.js': [('getItem','SETTINGS_KEY'),('getItem','PLAYER_SETTINGS_KEY'),('getItem','key'),('setItem','PLAYER_SETTINGS_KEY'),('setItem','PLAYER_SETTINGS_KEY'),('getItem','RECORD_KEY')]
-}
-for path, expected in contracts.items():
-    text = originals[path].decode()
-    found = re.findall(r'\blocalStorage\.(\w+)\(\s*([A-Za-z_$][A-Za-z0-9_$.]*)', text)
-    if sorted(found) != sorted(expected) or len(found) != len(re.findall(r'\blocalStorage\b', text)):
-        raise SystemExit('Storage call/key contract changed; audit required: ' + path)
-state = originals['games/survivor/engine/state.js'].decode()
-if sorted(re.findall(r'\breadLegacy\(([^)]*)\)', state)) != ['SETTINGS_KEY','SurvivorData.KEY']:
-    raise SystemExit('Legacy storage migration surface changed; audit required')
-for expected in ['localStorage.getItem(SETTINGS_KEY)', 'localStorage.getItem(PLAYER_SETTINGS_KEY)',
-                 'localStorage.getItem(RECORD_KEY)', "readLegacy(SETTINGS_KEY)", 'readLegacy(SurvivorData.KEY)',
-                 'localStorage.setItem(PLAYER_SETTINGS_KEY,']:
-    if expected not in state:
-        raise SystemExit('Storage call contract changed: ' + expected)
-if re.search(r'\bsessionStorage\b', state):
-    raise SystemExit('Unexpected sessionStorage')
+# Every complete profile is audited before changing any storage literal.
+try:
+    key_files, storage_uses, storage_profile = audit_storage(originals)
+except ValueError as exc:
+    raise SystemExit(str(exc)) from exc
 
 payload = {}
 entries = []
@@ -186,7 +158,7 @@ Candidate URL: {url}
 
 Publish these prepared files as the Pages branch contents for `stasischen/erin-preview`; do not run source scripts or add CI workflows. The source game repository and its main branch are unchanged by this payload.
 
-The landing pages identify the candidate and link explicitly to the production site. Game viewport and HUD are unchanged. Five storage key literals use a PR-and-full-SHA prefix. Service worker registration and PWA installation references are disabled only in this snapshot; no production worker is unregistered and no cache is deleted. Source `sw.js` and `manifest.webmanifest` are intentionally omitted.
+The landing pages identify the candidate and link explicitly to the production site. Game viewport and HUD are unchanged. {'Five' if storage_profile == 'legacy-5' else 'Seven'} storage key literals use a PR-and-full-SHA prefix. Service worker registration and PWA installation references are disabled only in this snapshot; no production worker is unregistered and no cache is deleted. Source `sw.js` and `manifest.webmanifest` are intentionally omitted.
 
 The candidate `preview-manifest.json` lists original and deployed SHA-256 values, allowed transforms, omitted PWA files, and the source storage audit. Its detached `.sha256` covers the manifest itself. `adapter-diff.patch` uses only logical source/deployed paths. No private coordination data, screenshots, logs, tests, tools, Git metadata or workflow files belong in this publication.
 '''.encode()

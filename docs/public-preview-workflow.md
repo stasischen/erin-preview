@@ -51,7 +51,12 @@ https://stasischen.github.io/erin-preview/pr-103/206f285bf9aac1800613b88dd27daff
 
 ## 部署差異與隔離
 
-只改兩個 JS 的五個儲存 key 字面常數：Maker、舊設定、玩家設定、一般紀錄、Maker 紀錄；使用包含 PR／完整 SHA 的前綴，舊資料遷移讀取也隔離。`loop.js` 和戰鬥／資料／render 的其餘邏輯逐 byte 保留，不使用 Storage prototype monkeypatch。
+只改兩個 JS 的已稽核儲存 key 字面常數；支援兩個完整 profile：
+
+- 舊版五個 key：Maker、舊設定、玩家設定、一般紀錄、Maker 紀錄。
+- 每 Boss 紀錄版七個 key：保留上述五個，增加 `erin-survivor-trial-best-seconds-v1` 與 `erin-survivor-maker-trial-best-seconds-v1`。兩個 `const` 宣告及 `getItem`／`setItem` 的完整首參數 `custom?MAKER_TRIAL_RECORD_KEY:TRIAL_RECORD_KEY` 必須一同符合；缺一個、分支顛倒或換成未知變數均拒絕。不能因看見首字 `custom` 就放行未稽核 expression。
+
+所有 key 使用包含 PR／完整 SHA 的前綴，舊資料遷移讀取也隔離。未列入 profile 的呼叫、檔案或 sessionStorage 仍 fail closed，先人工稽核再修改工具。`loop.js` 和戰鬥／資料／render 的其餘邏輯逐 byte 保留，不使用 Storage prototype monkeypatch。
 
 候選 `register-sw.js` 為固定 no-op，不註冊、取消或刪除正式站 SW／cache。候選不發布原 `sw.js`／`manifest.webmanifest`；HTML 移除 PWA/install head 引用並使用 inline favicon，避免 origin 根目錄 favicon 請求。**公開候選不提供、也不驗收 PWA 安裝／離線功能**，需要網路。
 
@@ -70,6 +75,8 @@ node tools/validate-public-preview.cjs \
 
 另一候選只供同 origin A／B 隔離測試，輸出與報告都在 repo 外，不發布第二候選測試夾或任何完整日誌。`CHROME_BIN` 可覆寫 Chrome 執行檔；工具以獨立暫存 profile、本機短暫 HTTP server 測試，結束關閉兩者，不接觸使用者日常瀏覽器資料。
 
-檢查所有檔案 HTTP200/hash、候選深路徑可開始／移動、Maker 與設定的真實保存、一般／Maker 紀錄、legacy 遷移、A／B 候選隔離、五個正式 key sentinel 未變、既有 `/erin/` SW／cache sentinel 保留、候選無 controller、沒有正式路徑 runtime request、Maker 返回及首頁連結留在候選、沒有 404／console error／JS exception。
+檢查所有檔案 HTTP200/hash、候選深路徑可開始／移動、Maker 與設定的真實保存、一般／Maker 紀錄、legacy 遷移、A／B 候選隔離、該 profile 全部正式 key sentinel 未變、既有 `/erin/` SW／cache sentinel 保留、候選無 controller、沒有正式路徑 runtime request、Maker 返回及首頁連結留在候選、沒有 404／console error／JS exception。A／B stage 必須使用同一個完整 profile。
+
+七 key profile 另驗每 Boss 紀錄：正常與 Maker 模式各保存不同時間，A／B 候選不互讀；多次重新載入後分別讀回各自正常／Maker 的值，避免只驗記憶體快取。兩個未加前綴的正式紀錄 key 使用不同 sentinel，結束必須保持原值。這是本機發布隔離工程驗證，可以呼叫規則接合層；不冒充以可見 UI 真正打贏 Boss 的 Dot 驗收。
 
 本機測試只是發布工程正確性／隔離 smoke，不替代 **Dot 雲端瀏覽器** 對固定候選 SHA 的三尺寸實際遊戲驗收；公開後仍須再核對公開 URL、版本與 artifact hash。
