@@ -16,15 +16,38 @@ parser.add_argument('--sha', required=True)
 parser.add_argument('--pr', type=int, required=True)
 parser.add_argument('--output', type=Path, required=True)
 parser.add_argument('--adapter-version', type=int, default=1)
+parser.add_argument('--existing-site', type=Path,
+                    help='Read and preserve the existing shared root files for append-only publication')
 args = parser.parse_args()
 if not re.fullmatch('[0-9a-f]{40}', args.sha) or args.pr <= 0 or args.adapter_version <= 0:
     raise SystemExit('A positive PR number and full commit SHA are required')
 repo = args.repo.resolve()
 out = args.output.resolve()
+if args.output.is_symlink():
+    raise SystemExit('Output may not be a symlink')
 if out == repo or repo in out.parents:
     raise SystemExit('Output must be outside the source repository')
 if out.exists() and any(p.is_symlink() or '.git' in p.parts for p in out.rglob('*')):
     raise SystemExit('Output may not contain symlinks or a Git checkout')
+shared_root = {}
+if args.existing_site is not None:
+    site = args.existing_site.resolve()
+    if args.existing_site.is_symlink() or not site.is_dir():
+        raise SystemExit('Existing site must be a real directory, not a symlink')
+    if out == site or site in out.parents or out in site.parents:
+        raise SystemExit('Output must not overlap the read-only existing site')
+    for name in ('index.html', 'README.md', '.nojekyll'):
+        source = site / name
+        if source.is_symlink() or not source.is_file():
+            raise SystemExit('Existing shared root file must be a regular file: ' + name)
+        shared_root[name] = source.read_bytes()
+    if shared_root['.nojekyll'] != b'':
+        raise SystemExit('Existing .nojekyll must be empty')
+
+def shared_file(name, generated, change):
+    if name in shared_root:
+        return shared_root[name], 'reuse existing immutable shared root file'
+    return generated, change
 
 def git(*words):
     return subprocess.check_output(['git', *words], cwd=repo)
@@ -47,6 +70,8 @@ version = json.loads(originals['games/survivor/version.json'])['version']
 if not re.fullmatch('[A-Za-z0-9-]+', version):
     raise SystemExit('Invalid source version')
 candidate = f'pr-{args.pr}/{args.sha}' + ('' if args.adapter_version == 1 else f'/adapter-{args.adapter_version}')
+if args.existing_site is not None and (site / candidate).exists():
+    raise SystemExit('Candidate path already exists in the read-only site; use a new candidate identity')
 base = f'/erin-preview/{candidate}/'
 prefix = f'erin-preview:pr-{args.pr}:{args.sha}:' + ('' if args.adapter_version == 1 else f'adapter-{args.adapter_version}:')
 url = 'https://stasischen.github.io' + base + 'games/survivor/'
@@ -148,9 +173,11 @@ def landing(game_href, manifest_href):
 <p>設定、Maker 作品與紀錄依 PR／SHA 隔離；此測試版不註冊 Service Worker，不提供安裝或離線功能。</p>
 <p><a href="https://stasischen.github.io/erin/" target="_blank" rel="noopener noreferrer">正式站（外部連結，另開分頁）</a></p></body></html>\n'''.encode()
 
-record('index.html', landing('./'+candidate+'/games/survivor/', './'+candidate+'/preview-manifest.json'), changes=['generate public preview index'])
+root_index, root_index_change = shared_file('index.html', landing('./'+candidate+'/games/survivor/', './'+candidate+'/preview-manifest.json'), 'generate public preview index')
+record('index.html', root_index, changes=[root_index_change])
 record(candidate+'/index.html', landing('./games/survivor/', './preview-manifest.json'), read('index.html'), 'index.html', ['replace source homepage with candidate-only landing; production is explicit external link'])
-record('.nojekyll', b'', changes=['serve static files without Jekyll'])
+nojekyll, nojekyll_change = shared_file('.nojekyll', b'', 'serve static files without Jekyll')
+record('.nojekyll', nojekyll, changes=[nojekyll_change])
 readme = f'''# Erin public preview
 
 This directory is a prepared static Pages payload for PR #{args.pr}, source `{args.sha}`, version `{version}`.
@@ -163,7 +190,8 @@ The landing pages identify the candidate and link explicitly to the production s
 
 The candidate `preview-manifest.json` lists original and deployed SHA-256 values, allowed transforms, omitted PWA files, and the source storage audit. Its detached `.sha256` covers the manifest itself. `adapter-diff.patch` uses only logical source/deployed paths. No private coordination data, screenshots, logs, tests, tools, Git metadata or workflow files belong in this publication.
 '''.encode()
-record('README.md', readme, changes=['generate public deployment notes'])
+root_readme, root_readme_change = shared_file('README.md', readme, 'generate public deployment notes')
+record('README.md', root_readme, changes=[root_readme_change])
 
 # Fail closed on accidental site-root navigation, private text or non-allowlisted transforms.
 private_markers = ['/Users/', '/.local/share/', '/agent-inbox/', str(repo), str(Path.home())]
@@ -212,7 +240,7 @@ if out.exists():
         raise SystemExit('Unexpected existing publication files: ' + ', '.join(sorted(extra)))
 for rel, raw in payload.items():
     dest = out/rel
-    if rel.startswith(candidate+'/') and dest.exists() and dest.read_bytes()!=raw:
+    if (rel.startswith(candidate+'/') or args.existing_site is not None) and dest.exists() and dest.read_bytes()!=raw:
         raise SystemExit('Immutable candidate differs; choose a new adapter version and output: ' + rel)
 for rel, raw in sorted(payload.items()):
     dest = out/rel

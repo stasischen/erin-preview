@@ -14,7 +14,26 @@ python3 tools/prepare-public-preview.py \
   --output "$PREVIEW_STAGE"
 ```
 
-`--repo` 可明確指定 checkout；`--output` 必須是來源 repo 外專用目錄。輸出不得含 `.git`、symlink 或未知額外檔案。每次新候選使用自己的 stage；發布多個候選時保留舊候選路徑，更新首頁索引不等於覆蓋舊候選。
+`--repo` 可明確指定 checkout；`--output` 必須是來源 repo 外專用目錄。輸出不得含 `.git`、symlink 或未知額外檔案。上例是建立第一個站點的模式；發布多個候選時使用下述追加模式，不能直接覆蓋共用首頁。
+
+## 在既有測試站追加候選
+
+既有 PR103 manifest 也固定了根目錄 `index.html`、`README.md`、`.nojekyll` 的 hash。只保留舊候選子目錄、卻改寫共用首頁或 README，仍會破壞舊候選的完整性證據。因此新增候選須沿用既有根三檔的精確 bytes：
+
+```sh
+python3 tools/prepare-public-preview.py \
+  --repo "$ERIN_REPO" \
+  --pr "$PR_NUMBER" \
+  --sha "$FULL_SOURCE_SHA" \
+  --existing-site "$EXISTING_SITE" \
+  --output "$NEW_CANDIDATE_STAGE"
+```
+
+`--existing-site` 僅唯讀三個根檔，不修改或複製舊候選、lab 或 Git 資料；允許它指向 Pages checkout，但三檔必須是普通檔案、`.nojekyll` 必須為空。輸出 stage 必須與既有站點分離，不能等於、位於其內或包住它。既有站點已有同一候選路徑時拒絕產生，避免重新製作不同 manifest 後覆寫固定候選。
+
+產生後先驗證新 manifest 所列每個 payload，再於 repo 外模擬覆合：確認所有既有檔案（包含舊 manifest、根檔與 lab）完全未變、舊 manifest 的所有 payload hash 仍相符。實際發布只加入新候選目錄；三個共用根檔應與原站完全相同，不需提交。新 manifest 記錄了沿用根檔的 bytes/hash 與原因，沒有本機來源路徑。
+
+共用首頁和 README 會繼續描述早期候選；新增候選使用自己的 `/pr-<PR>/<完整SHA>/index.html`、遊戲 URL 或 lab URL 送審，不把根首頁當作目前候選。若要重做共用索引，需另行遷移完整性格式，不能在追加發布時順手更改。
 
 本輪固定入口：
 
