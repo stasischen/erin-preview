@@ -1,0 +1,121 @@
+/* 各畫面集中定義；視窗尺寸旗標只由 fitVisibleViewport 寫入 data-short。 */
+
+/* 共用容器與開始畫面 */
+#makerClose { width: 44px; flex-shrink: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-radius: 50%; font-size: 22px; }
+#makerStatus { flex: 1; min-width: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; max-height: 48px; overflow: auto; touch-action: pan-y; font-size: 14px; color: #bdd5e7; }
+#makerStatus.error { color: #ffb8b8; }
+#play { flex-shrink: 0; min-width: 140px; font-size: 22px; background: #2176a0; }
+
+/* Maker */
+.maker-room { position: absolute; z-index: 6; top: 0; right: 0; bottom: 0; left: 0; display: grid; padding-top: max(8px, var(--safe-top)); padding-right: max(10px, var(--safe-right)); padding-bottom: max(8px, var(--safe-bottom)); padding-left: max(10px, var(--safe-left)); gap: 8px; background: #102538; color: #eef8ff; grid-template-columns: 116px minmax(0, 1fr); grid-template-rows: 44px minmax(0, 1fr) 56px; overflow: hidden; }
+.maker-room[hidden] { display: none; }
+.maker-room button { font: inherit; color: inherit; border: 2px solid #75adc8; background: #244963; padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; min-height: 44px; touch-action: manipulation; cursor: pointer; box-shadow: 0 3px 0 #071522; }
+.maker-room summary { font: inherit; color: inherit; border: 2px solid #75adc8; background: #244963; padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; min-height: 44px; touch-action: manipulation; }
+.maker-room input { font: inherit; color: inherit; border: 2px solid #75adc8; background: #244963; padding-top: 8px; padding-right: 12px; padding-bottom: 8px; padding-left: 12px; min-height: 44px; touch-action: manipulation; }
+.maker-room button[aria-pressed="true"] { border-color: #ffe4a1; background: #385d70; }
+.maker-room button:active { transform: translateY(2px); }
+.maker-toolbar { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; min-width: 0; }
+.maker-footer { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; min-width: 0; border-top: 2px solid #547c96; padding-top: 8px; min-height: 0; }
+.maker-tabs { display: flex; flex-direction: column; align-items: stretch; gap: 8px; min-width: 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain; touch-action: pan-y; padding: 3px 4px 8px 0; }
+.maker-toolbar strong { margin-right: auto; font-size: 20px; }
+#save { width: 44px; flex-shrink: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-radius: 50%; font-size: 22px; }
+.maker-tabs button { flex: 0 0 auto; min-width: 0; text-align: left; white-space: nowrap; border-radius: 22px; font-weight: 800; }
+.maker-editor { min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; touch-action: pan-y; padding-top: 3px; padding-right: 5px; padding-bottom: 12px; padding-left: 0; }
+.maker-editor * { touch-action: pan-y; }
+.maker-editor .panel { padding-top: 14px; padding-right: 14px; padding-bottom: 14px; padding-left: 14px; margin-bottom: 12px; border: 2px solid #8cbad0; box-shadow: 4px 4px 0 #071522; background: #142b40; }
+.maker-editor h2 { margin-top: 0; margin-right: 0; margin-bottom: 12px; margin-left: 0; font-size: 21px; }
+.maker-editor h3 { margin-top: 8px; margin-right: 0; margin-bottom: 8px; margin-left: 0; font-size: 17px; }
+.maker-editor p { color: #bdd5e7; font-size: 14px; line-height: 1.6; }
+.maker-editor .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(235px, 100%), 1fr)); gap: 12px; }
+.maker-editor label { min-width: 0; display: flex; flex-direction: column; gap: 6px; padding-top: 6px; padding-right: 0; padding-bottom: 6px; padding-left: 0; }
+.maker-editor input { width: 100%; max-width: 28ch; min-width: 0; border-radius: 0; background: #091a2b; user-select: text; -webkit-user-select: text; }
+.maker-editor fieldset { min-width: 0; margin-top: 12px; margin-right: 0; margin-bottom: 12px; margin-left: 0; border: 2px solid #547c96; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; }
+.maker-editor legend { padding-top: 6px; padding-right: 10px; padding-bottom: 6px; padding-left: 10px; background: #244963; border: 2px solid #75adc8; }
+.maker-choice { margin-top: 8px; margin-right: 0; margin-bottom: 8px; margin-left: 0; }
+.maker-choice summary { cursor: pointer; overflow-wrap: anywhere; }
+.maker-choice .grid { padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; background: #091a2b; }
+.maker-choice button { border-radius: 14px; }
+.maker-number { padding-top: 8px; padding-right: 8px; padding-bottom: 8px; padding-left: 8px; background: #213d54; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; }
+.maker-number > div { display: flex; gap: 8px; align-items: center; }
+.maker-number output { margin-right: auto; font-weight: 900; font-size: 21px; color: #9adfff; }
+.maker-number button { border-radius: 50%; width: 44px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 24px; }
+.maker-tree { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.maker-branch { min-width: 0; border-top: 2px solid #75adc8; background: linear-gradient(90deg, transparent calc(50% - 1px), #547c96 50%, transparent calc(50% + 1px)); }
+.maker-branch .upgrade-card { width: 100%; min-height: 96px; margin-top: 0; margin-right: 0; margin-bottom: 20px; margin-left: 0; font-size: 16px; padding-top: 10px; padding-right: 6px; padding-bottom: 10px; padding-left: 6px; overflow-wrap: anywhere; }
+.maker-branch h3 { background: #142b40; }
+.maker-card-edit { border-top: 2px solid #ffe4a1; padding-top: 12px; scroll-margin-top: 4px; }
+.maker-portrait { font-size: 64px; background: #213d54; text-align: center; width: 128px; height: 100px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-bottom: 12px; }
+.maker-moves { display: flex; gap: 10px; overflow-x: auto; touch-action: pan-x; padding-top: 4px; padding-right: 4px; padding-bottom: 10px; padding-left: 4px; }
+.maker-moves .upgrade-card { flex: 0 0 150px; min-height: 90px; }
+.maker-editor input.maker-slider { max-width: none; appearance: none; -webkit-appearance: none; width: 100%; min-height: 44px; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border: 0; background: transparent; touch-action: none; cursor: pointer; }
+.maker-slider::-webkit-slider-runnable-track { height: 12px; background: #091a2b; border: 2px solid #75adc8; }
+.maker-slider::-webkit-slider-thumb { appearance: none; -webkit-appearance: none; width: 26px; height: 32px; margin-top: -12px; border: 3px solid #d1efff; border-radius: 0; background: #2176a0; box-shadow: 3px 3px 0 #071522; }
+.maker-slider::-moz-range-track { height: 8px; background: #091a2b; border: 2px solid #75adc8; }
+.maker-slider::-moz-range-thumb { width: 20px; height: 26px; border: 3px solid #d1efff; border-radius: 0; background: #2176a0; }
+.maker-room [role="switch"][aria-checked="true"] { background: #23604f; border-color: #a3f0ca; }
+/* 共用尺寸旗標：compact */
+:where(.game-shell[data-short~="compact"]) .maker-room { gap: 4px; }
+:where(.game-shell[data-short~="compact"]) .maker-footer { padding-top: 4px; }
+:where(.game-shell[data-short~="compact"]) .maker-tabs { gap: 4px; }
+:where(.game-shell[data-short~="compact"]) .maker-toolbar strong { font-size: 17px; }
+:where(.game-shell[data-short~="compact"]) .maker-tabs button { padding-top: 6px; padding-right: 4px; padding-bottom: 6px; padding-left: 4px; font-size: 13px; }
+:where(.game-shell[data-short~="compact"]) .maker-editor .panel { padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px; }
+:where(.game-shell[data-short~="compact"]) .maker-tree { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+:where(.game-shell[data-short~="compact"]) #play { min-height: 46px; padding-top: 6px; padding-right: 20px; padding-bottom: 6px; padding-left: 20px; }
+
+.maker-encounters .encounter-toggle { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.maker-encounters .encounter-toggle button, .maker-encounters .encounter-adjust { border-radius: 50%; width: 48px; height: 48px; min-height: 48px; padding: 8px; }
+/* 每頁保留固定可視範圍；練習場使用整個內容區，不壓縮編輯欄。 */
+.maker-editor .panel { min-width: 0; max-width: 100%; }
+/* 練習場覆蓋整個正式遊戲 shell；沒有常駐側欄或外框標題。 */
+.practice-dock{position:absolute;inset:0;z-index:50;display:block;width:100%;height:100%}
+.practice-dock iframe{width:100%;height:100%;border:0;display:block}
+.enemy-live-preview{width:100%;height:210px;min-width:0;margin:8px 0}
+.enemy-live-preview iframe{display:block;width:100%;height:100%;border:1px solid #557482}
+.enemy-preview-toggle{margin:8px 0;max-width:100%}
+:where(.game-shell[data-short~="compact"]) .enemy-live-preview{height:160px}
+
+/* 六個分類固定在頂端；只建立目前選中的編輯面板。 */
+.maker-room { grid-template-columns: minmax(0,1fr); grid-template-rows: 44px 48px minmax(0,1fr) 56px; }
+.maker-tabs { grid-column: 1 / -1; flex-direction: row; overflow-y: hidden; overflow-x: auto; touch-action: pan-x; padding: 0 0 4px; gap: 4px; }
+.maker-tabs button { flex: 1 0 auto; text-align: center; padding: 4px 8px; }
+.maker-editor { position: relative; display: grid; grid-template-columns: 108px minmax(0,1fr) minmax(220px,30%); gap: 8px; overflow: hidden; padding: 0; }
+.maker-editor[data-preview="closed"] { grid-template-columns: 108px minmax(0,1fr); }
+.maker-items, .maker-content, .maker-preview { min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; touch-action: pan-y; padding: 3px 5px 20px 0; }
+.maker-items { display: flex; flex-direction: column; gap: 6px; }
+.maker-items button { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; overflow-wrap: anywhere; font-size: 13px; padding: 6px 3px; }
+.maker-content .panel { margin: 6px 0; padding: 10px; }
+.maker-content .grid { grid-template-columns: repeat(auto-fit,minmax(min(200px,100%),1fr)); }
+.maker-item-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 5px; }
+.maker-item-heading strong { margin-right: auto; }
+.maker-item-heading button { padding: 4px 8px; font-size: 14px; }
+.maker-preview { background: #091a2b; padding: 8px; border: 1px solid #547c96; }
+.maker-preview[hidden] { display: none; }
+.maker-preview h3 { margin: 0; }
+.maker-preview .skill-preview-host { width: 100%; }
+.maker-trial { position: absolute; inset: 0; z-index: 55; background: #102538; padding: 8px; display: flex; flex-direction: column; overflow: auto; }
+.maker-trial > .skill-preview-host { flex: 1; min-height: 180px; }
+
+:where(.game-shell[data-short~="compact"]) .maker-room { padding: 4px max(4px,var(--safe-right)) 4px max(4px,var(--safe-left)); gap: 4px; grid-template-rows: 44px 44px minmax(0,1fr) 54px; }
+:where(.game-shell[data-short~="compact"]) .maker-editor, :where(.game-shell[data-short~="compact"]) .maker-editor[data-preview="closed"] { grid-template-columns: 72px minmax(0,1fr); gap: 4px; }
+:where(.game-shell[data-short~="compact"]) .maker-items button { font-size: 11px; }
+:where(.game-shell[data-short~="compact"]) .maker-editor[data-preview="open"] { grid-template-columns: 72px minmax(0,1fr) minmax(170px,30%); }
+:where(.game-shell[data-short~="compact"]) .maker-preview { position: static; width: auto; box-shadow: none; }
+:where(.game-shell[data-short~="compact"]) .maker-tabs button { min-width: 64px; font-size: 13px; }
+:where(.game-shell[data-short~="compact"]) .maker-toolbar strong { font-size: 16px; }
+:where(.game-shell[data-short~="compact"]) #makerStatus { font-size: 12px; }
+:where(.game-shell[data-short~="compact"]) #play { min-width: 90px; font-size: 18px; }
+
+.timing-timeline { display:flex; flex-wrap:wrap; gap:4px; margin:8px 0; }
+.timing-timeline span { flex-basis:64px; padding:8px 4px; text-align:center; color:#102638; border-radius:6px; }
+.timing-windup { background:#ffe299; }.timing-active { background:#ffacaa; }
+.timing-recovery { background:#aee5ff; }.timing-cooldown { background:#d6c4fa; }
+
+/* 五種積木分組，收合狀態依武器與招式保留。 */
+.weapon-move { border-top: 2px solid #adcde3; margin-top: 14px; padding-top: 8px; }
+.weapon-block { border-left: 4px solid #659fc2; border-radius: 6px; background: #f3f8fc; margin: 8px 0; padding: 8px; }
+.weapon-block > summary { cursor: pointer; font-weight: bold; min-height: 32px; }
+.weapon-block > .grid { margin-top: 8px; }
+
+/* 開啟旁邊的選單時，積木切換按鈕維持原本高度。 */
+.weapon-block > .grid > button { align-self: start; }
