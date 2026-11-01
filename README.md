@@ -1,11 +1,9 @@
 # Erin public preview
 
-This directory is a prepared static Pages payload for PR #103, source `206f285bf9aac1800613b88dd27daffcac2a8d6b`, version `20261027i`.
+Latest candidate: PR #112, source `39b4519d4075e354b75df87f04d2539981790d1f`, version `20261101f`.
 
-Candidate URL: https://stasischen.github.io/erin-preview/pr-103/206f285bf9aac1800613b88dd27daffcac2a8d6b/games/survivor/
+Candidate URL: https://stasischen.github.io/erin-preview/pr-112/39b4519d4075e354b75df87f04d2539981790d1f/games/survivor/
 
-Publish these prepared files as the Pages branch contents for `stasischen/erin-preview`; do not run source scripts or add CI workflows. The source game repository and its main branch are unchanged by this payload.
+This branch contains only static candidate payloads. Do not run source scripts or add CI workflows. Each candidate is immutable and isolated by PR and full source SHA. The source game repository and its main branch are unchanged by this payload.
 
-The landing pages identify the candidate and link explicitly to the production site. Game viewport and HUD are unchanged. Five storage key literals use a PR-and-full-SHA prefix. Service worker registration and PWA installation references are disabled only in this snapshot; no production worker is unregistered and no cache is deleted. Source `sw.js` and `manifest.webmanifest` are intentionally omitted.
-
-The candidate `preview-manifest.json` lists original and deployed SHA-256 values, allowed transforms, omitted PWA files, and the source storage audit. Its detached `.sha256` covers the manifest itself. `adapter-diff.patch` uses only logical source/deployed paths. No private coordination data, screenshots, logs, tests, tools, Git metadata or workflow files belong in this publication.
+Candidate snapshots disable service worker registration and PWA installation only within the snapshot, and isolate storage keys by PR/SHA. No production worker is unregistered and no cache is deleted. `sw.js`, `manifest.webmanifest`, tests, tools, docs, screenshots, logs, coordination data, and Git metadata are not published. Each candidate includes a SHA-256 manifest and logical adapter diff.
