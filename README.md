@@ -1,8 +1,8 @@
 # Erin public preview
 
-Latest candidate: PR #112, source `39b4519d4075e354b75df87f04d2539981790d1f`, version `20261101f`.
+Latest candidate: PR #112, source `4324a6cd73a1f65ea71e230bc6f3a645d97be98f`, version `20261101i`.
 
-Candidate URL: https://stasischen.github.io/erin-preview/pr-112/39b4519d4075e354b75df87f04d2539981790d1f/games/survivor/
+Candidate URL: https://stasischen.github.io/erin-preview/pr-112/4324a6cd73a1f65ea71e230bc6f3a645d97be98f/games/survivor/
 
 This branch contains only static candidate payloads. Do not run source scripts or add CI workflows. Each candidate is immutable and isolated by PR and full source SHA. The source game repository and its main branch are unchanged by this payload.
 
