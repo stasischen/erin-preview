@@ -1,0 +1,59 @@
+/* Complete three-card selection; compact landscape keeps all names in view. */
+.upgrade-panel { display:grid; container-name:upgrade-panel; container-type:size; overflow:hidden; min-height:0; text-align:center; width:min(1060px,100%); height:min(560px,100%); padding:12px; gap:10px; grid-template-columns:minmax(145px,.9fr) minmax(0,3fr); grid-template-rows:24px minmax(0,1fr) 44px; }
+.upgrade-panel > h2 { grid-column:1; text-align:left; font-size:16px; white-space:nowrap; }
+.upgrade-panel > p { grid-column:2; font-size:12px; }
+.upgrade-loadout { grid-column:1; grid-row:2 / 4; min-width:0; overflow:auto; padding:10px; text-align:left; border-radius:12px; background:#16172b; font-size:12px; line-height:1.5; }
+.upgrade-loadout h3 { margin:0 0 8px; color:#b3eaff; font-size:15px; }
+.upgrade-loadout p { margin:8px 0; font-weight:500; }
+.upgrade-loadout .pixel-icon { width:23px; height:23px; vertical-align:middle; }
+.loadout-items { display:grid; gap:6px; border-top:1px solid #7887ae40; padding-top:8px; }
+.loadout-items > span { display:flex; align-items:center; gap:4px; flex-wrap:wrap; }
+.loadout-items b { margin-left:auto; color:#b3eaff; }
+.fusion-hint { border-top:1px solid #7887ae40; padding-top:8px; color:#d5c8eb; }
+.upgrade-panel .upgrade-cards { grid-column:2; grid-row:2; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; min-width:0; }
+.upgrade-panel .upgrade-card, .upgrade-panel.weapon-picker .upgrade-card { appearance:none; position:relative; width:auto; height:auto; min-width:0; min-height:0; padding:10px; display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-start; gap:6px; border:2px solid #7887ae60; border-top:4px solid var(--school-color); border-radius:14px; text-align:left; line-height:1.4; overflow:auto; box-shadow:0 3px 0 #100f23; }
+.upgrade-panel .upgrade-card[aria-pressed="true"] { border-color:#b3eaff; background:#35445d; outline:0; box-shadow:inset 0 0 0 1px #b3eaff; }
+.upgrade-panel .upgrade-card:focus-visible { outline:2px solid #ffe4a1; outline-offset:-4px; }
+.upgrade-panel .upgrade-card:active { transform:none; }
+.upgrade-panel .upgrade-card strong { font-size:18px; line-height:1.3; color:#f3faff; }
+.upgrade-panel .upgrade-card .upgrade-icon { align-self:center; margin:4px 0; }
+.upgrade-panel .upgrade-icon .pixel-icon { width:48px; height:48px; }
+.upgrade-panel .upgrade-card .card-type { font-size:11px; color:#c9d5e8; font-weight:500; }
+.upgrade-panel .upgrade-card .card-level { position:static; font-size:12px; padding:2px 6px; color:#b3eaff; }
+.upgrade-panel .upgrade-card .card-copy { font-size:14px; line-height:1.55; font-weight:500; overflow-wrap:anywhere; }
+.upgrade-panel .upgrade-card .requirements { font-size:11px; font-weight:500; }
+.upgrade-panel .upgrade-card .card-selected { visibility:hidden; margin-top:auto; padding-top:4px; font-size:12px; color:#b3eaff; }
+.upgrade-panel .upgrade-card[aria-pressed="true"] .card-selected { visibility:visible; }
+.upgrade-panel .upgrade-actions { grid-column:2; grid-row:3; gap:12px; justify-content:flex-start; }
+.upgrade-panel .upgrade-actions > button { flex:0 1 auto; display:flex; gap:6px; min-width:100px; width:auto; height:40px; min-height:40px; padding:6px 12px; border-radius:12px; font-size:13px; }
+.upgrade-panel .upgrade-actions > button .pixel-icon { width:22px; height:22px; }
+.upgrade-panel .reroll-count { position:static; padding:0; background:none; color:inherit; }
+@container upgrade-panel (height < 380px) {
+ .upgrade-panel .upgrade-card { gap:4px; padding:7px; }
+ .upgrade-panel .upgrade-card strong { font-size:16px; }
+ .upgrade-panel .upgrade-icon .pixel-icon { width:32px; height:32px; }
+ .upgrade-panel .upgrade-card .upgrade-icon { margin:0; }
+ .upgrade-panel .upgrade-card .card-copy { font-size:12px; line-height:1.45; }
+ .upgrade-loadout { padding:8px; font-size:11px; }
+}
+
+.upgrade-panel[hidden] { display:none; }
+.upgrade-panel h2, .upgrade-panel > p { margin:0; align-self:center; }
+.upgrade-panel .upgrade-cards { min-height:0; }
+.upgrade-panel .upgrade-card { font:inherit; color:#f3faff; background:#292840; cursor:pointer; --school-color:#7196ad; }
+.upgrade-panel .upgrade-card[data-rarity="legendary"] { --school-color:#ead486; }
+.upgrade-panel .upgrade-card[data-rarity="epic"] { --school-color:#cbb4e5; }
+.upgrade-panel .upgrade-actions { display:flex; align-items:center; position:relative; min-width:0; }
+.upgrade-panel .upgrade-actions > button { align-items:center; justify-content:center; }
+.upgrade-panel .upgrade-actions > button:disabled { opacity:.4; cursor:default; }
+.upgrade-panel .tree-details { margin:0 0 0 auto; }
+.upgrade-panel .tree-details summary { width:36px;height:36px;padding:7px;border:1px solid #7887ae70;border-radius:10px;list-style:none;cursor:pointer; }
+.upgrade-panel .tree-details summary .pixel-icon { width:20px;height:20px; }
+.upgrade-panel .tree-details[open] { position:absolute;inset:auto 0 0;z-index:2;max-height:260px;overflow:auto;padding:10px;background:#16172b;border:1px solid #7887ae70;border-radius:12px; }
+.upgrade-panel .skill-tree { grid-template-columns:1fr; }
+.weapon-picker .tree-details { display:none; }
+
+.upgrade-loadout h4 { color:#b3eaff; margin:10px 0 5px; border-top:1px solid #7887ae40; padding-top:6px; }
+.loadout-weapons p { padding:4px 0; margin:0; }
+
+.skill-button[data-ability-label]:not([data-ability-label=""])::after{content:attr(data-ability-label);position:absolute;bottom:3px;left:-10px;right:-10px;font-size:11px;line-height:1.1;color:#fff;text-shadow:0 1px 3px #13293a;pointer-events:none}
