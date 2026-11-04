@@ -1,0 +1,1290 @@
+{
+  "adapter_version": 1,
+  "candidate_path": "/erin-preview/pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/",
+  "coverage": "all deployed payload files except this manifest and its detached digest",
+  "files": [
+    {
+      "deployed_bytes": 0,
+      "deployed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": null,
+      "original_sha256": null,
+      "path": ".nojekyll",
+      "source_path": null,
+      "transformations": [
+        "reuse existing immutable shared root file"
+      ]
+    },
+    {
+      "deployed_bytes": 889,
+      "deployed_sha256": "e58e1a9acc46cd8e49eac01201477331b2fcf86b8a850aa797f8bf6b962dab94",
+      "original_bytes": null,
+      "original_sha256": null,
+      "path": "README.md",
+      "source_path": null,
+      "transformations": [
+        "reuse existing immutable shared root file"
+      ]
+    },
+    {
+      "deployed_bytes": 1720,
+      "deployed_sha256": "e6d8466765b37e5b69a02f40e0e9dedc6ae81d79fb2b7512f1ee39a564d4b8d7",
+      "original_bytes": null,
+      "original_sha256": null,
+      "path": "index.html",
+      "source_path": null,
+      "transformations": [
+        "reuse existing immutable shared root file"
+      ]
+    },
+    {
+      "deployed_bytes": 12603,
+      "deployed_sha256": "5f03c0917c23a4bd8a74cd99f970f8db59db7da6bdc11483f5031542d6c98ba4",
+      "original_bytes": null,
+      "original_sha256": null,
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/adapter-diff.patch",
+      "source_path": null,
+      "transformations": [
+        "generated logical adapter diff"
+      ]
+    },
+    {
+      "deployed_bytes": 103743,
+      "deployed_sha256": "31b9f081eee47a5648bd83503ba2b712cc303eebd139f895f9415fa11eb19bd4",
+      "original_bytes": 103743,
+      "original_sha256": "31b9f081eee47a5648bd83503ba2b712cc303eebd139f895f9415fa11eb19bd4",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art-manifest.js",
+      "source_path": "games/survivor/art-manifest.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 178,
+      "deployed_sha256": "61317c5c32d33e8bc57441d4b0f3e127fbfc79dba498b51e0760b0c137fed370",
+      "original_bytes": 178,
+      "original_sha256": "61317c5c32d33e8bc57441d4b0f3e127fbfc79dba498b51e0760b0c137fed370",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/characters/assassin.png",
+      "source_path": "games/survivor/art/characters/assassin.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 166,
+      "deployed_sha256": "f166c31769c0ab2a7f1d8f7375c40b1b82b6bffc152548974aaf992b2708e27c",
+      "original_bytes": 166,
+      "original_sha256": "f166c31769c0ab2a7f1d8f7375c40b1b82b6bffc152548974aaf992b2708e27c",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/characters/fire-twin.png",
+      "source_path": "games/survivor/art/characters/fire-twin.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 166,
+      "deployed_sha256": "3da35109465a0a875f76a91e7bd655f690718fdda740bb913b968c0c3bf9132c",
+      "original_bytes": 166,
+      "original_sha256": "3da35109465a0a875f76a91e7bd655f690718fdda740bb913b968c0c3bf9132c",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/characters/frost-twin.png",
+      "source_path": "games/survivor/art/characters/frost-twin.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 182,
+      "deployed_sha256": "1be4fc919de5a1713921d0e85ed98511103c80c4d148021534c1004b99ea5e60",
+      "original_bytes": 182,
+      "original_sha256": "1be4fc919de5a1713921d0e85ed98511103c80c4d148021534c1004b99ea5e60",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/characters/gatekeeper.png",
+      "source_path": "games/survivor/art/characters/gatekeeper.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 173,
+      "deployed_sha256": "3dc6cc803351096471efbb4bc5ce5127423068edb4afac614bc0f6b67cc7b179",
+      "original_bytes": 173,
+      "original_sha256": "3dc6cc803351096471efbb4bc5ce5127423068edb4afac614bc0f6b67cc7b179",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/characters/winged.png",
+      "source_path": "games/survivor/art/characters/winged.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1096,
+      "deployed_sha256": "802f0f1028cca869ad99771d22969c42b0eb6b7098460742cb9d614204e113b3",
+      "original_bytes": 1096,
+      "original_sha256": "802f0f1028cca869ad99771d22969c42b0eb6b7098460742cb9d614204e113b3",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/art/samples/player-directions.png",
+      "source_path": "games/survivor/art/samples/player-directions.png",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2247,
+      "deployed_sha256": "913b471f03c1df845b80881a3afd147e330c10d9f24d22232546cedc1fed8e81",
+      "original_bytes": 2247,
+      "original_sha256": "913b471f03c1df845b80881a3afd147e330c10d9f24d22232546cedc1fed8e81",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/assets/CREDITS.md",
+      "source_path": "games/survivor/assets/CREDITS.md",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1068,
+      "deployed_sha256": "3cc22a9ed0b1dd02189c1b6f4edb14847623f043589cc78b24ab839ef09b6e36",
+      "original_bytes": 1068,
+      "original_sha256": "3cc22a9ed0b1dd02189c1b6f4edb14847623f043589cc78b24ab839ef09b6e36",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/assets/audio/ZzFX-LICENSE.txt",
+      "source_path": "games/survivor/assets/audio/ZzFX-LICENSE.txt",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11518,
+      "deployed_sha256": "70aff80a836853ffd22f6df910fc9b6f1c72b8273015ee9ceb22cc31db5faa11",
+      "original_bytes": 11518,
+      "original_sha256": "70aff80a836853ffd22f6df910fc9b6f1c72b8273015ee9ceb22cc31db5faa11",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/boss.js",
+      "source_path": "games/survivor/data/boss.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 9418,
+      "deployed_sha256": "de35dc970b0c2154c8c8e2752a220abce360427cb037fa1e1cb8a78bb9f78e77",
+      "original_bytes": 9418,
+      "original_sha256": "de35dc970b0c2154c8c8e2752a220abce360427cb037fa1e1cb8a78bb9f78e77",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/cards-support.js",
+      "source_path": "games/survivor/data/cards-support.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5357,
+      "deployed_sha256": "553e8384cb8eefe5b2bb5655aed72f1b902bb1090e135f331fc127e47db56030",
+      "original_bytes": 5357,
+      "original_sha256": "553e8384cb8eefe5b2bb5655aed72f1b902bb1090e135f331fc127e47db56030",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/cards-thunder.js",
+      "source_path": "games/survivor/data/cards-thunder.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5180,
+      "deployed_sha256": "5290ce1a9d3a6c990064439de0ca84bb709208960f797867b44ca3faf0924f99",
+      "original_bytes": 5180,
+      "original_sha256": "5290ce1a9d3a6c990064439de0ca84bb709208960f797867b44ca3faf0924f99",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/cards-water.js",
+      "source_path": "games/survivor/data/cards-water.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5116,
+      "deployed_sha256": "e3a5442c25d73fc39e1d0fb9b42cbaa7502298ccd901f034f1ebeac809e6fdeb",
+      "original_bytes": 5116,
+      "original_sha256": "e3a5442c25d73fc39e1d0fb9b42cbaa7502298ccd901f034f1ebeac809e6fdeb",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/cards-wind.js",
+      "source_path": "games/survivor/data/cards-wind.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6085,
+      "deployed_sha256": "0ccda3e4b417192c425bdae6751123eeb86ba0cfec362f62d2e94ac26f223761",
+      "original_bytes": 6085,
+      "original_sha256": "0ccda3e4b417192c425bdae6751123eeb86ba0cfec362f62d2e94ac26f223761",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/defaults.js",
+      "source_path": "games/survivor/data/defaults.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8271,
+      "deployed_sha256": "8ee92f2235632e38f8738e124ebece18aa33c7be5a69a047168b4ee8901c1f9a",
+      "original_bytes": 8271,
+      "original_sha256": "8ee92f2235632e38f8738e124ebece18aa33c7be5a69a047168b4ee8901c1f9a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/enemies.js",
+      "source_path": "games/survivor/data/enemies.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4398,
+      "deployed_sha256": "a9ce72444b6d95af5fc2a0de9a729fd9a51a16f31f0e63bcb239af8ff4518f02",
+      "original_bytes": 4398,
+      "original_sha256": "a9ce72444b6d95af5fc2a0de9a729fd9a51a16f31f0e63bcb239af8ff4518f02",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/gallery-assassin.js",
+      "source_path": "games/survivor/data/gallery-assassin.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6121,
+      "deployed_sha256": "86cccda410773acc2b78dcef75df5c52d08802b621fe1a14598be5c2ae86f146",
+      "original_bytes": 6121,
+      "original_sha256": "86cccda410773acc2b78dcef75df5c52d08802b621fe1a14598be5c2ae86f146",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/gallery-frostfire.js",
+      "source_path": "games/survivor/data/gallery-frostfire.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6016,
+      "deployed_sha256": "2b28d519b5913113a9c7acf5d5631a4a7f19e20c9fa33685ee140af9a077db5f",
+      "original_bytes": 6016,
+      "original_sha256": "2b28d519b5913113a9c7acf5d5631a4a7f19e20c9fa33685ee140af9a077db5f",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/gallery-gatekeeper.js",
+      "source_path": "games/survivor/data/gallery-gatekeeper.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4971,
+      "deployed_sha256": "9a1e19c65ff0fd9fc4a5c8a0cd694a6c7ca439b21c8c68d763a68d617fdb0d86",
+      "original_bytes": 4971,
+      "original_sha256": "9a1e19c65ff0fd9fc4a5c8a0cd694a6c7ca439b21c8c68d763a68d617fdb0d86",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/gallery-winged.js",
+      "source_path": "games/survivor/data/gallery-winged.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 376,
+      "deployed_sha256": "1e15f9bf3fb68fdb089a03e816b537dd7957956a95bf67cefaf1d0d990febce9",
+      "original_bytes": 376,
+      "original_sha256": "1e15f9bf3fb68fdb089a03e816b537dd7957956a95bf67cefaf1d0d990febce9",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/gallery.js",
+      "source_path": "games/survivor/data/gallery.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 265,
+      "deployed_sha256": "8d0d1a087ad1c846d2566843e1997d346f8513ff1f1af8e50fb759f4a8a90c15",
+      "original_bytes": 265,
+      "original_sha256": "8d0d1a087ad1c846d2566843e1997d346f8513ff1f1af8e50fb759f4a8a90c15",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/load.js",
+      "source_path": "games/survivor/data/load.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 400,
+      "deployed_sha256": "64c66215b24028bac6a5bdad2094df51c5532b191110400ff641020c9d2b7ac9",
+      "original_bytes": 400,
+      "original_sha256": "64c66215b24028bac6a5bdad2094df51c5532b191110400ff641020c9d2b7ac9",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/manifest.js",
+      "source_path": "games/survivor/data/manifest.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 61434,
+      "deployed_sha256": "46e1e090ab43bb087eea74aa66e0fe4ee9d57124a77a792649521ac19183b69c",
+      "original_bytes": 61373,
+      "original_sha256": "857b647ed9240ba1a147b089ca871188f371b648cb59c37ee6a80cbfc7dd8000",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/schema.js",
+      "source_path": "games/survivor/data/schema.js",
+      "transformations": [
+        "storage-key-literal: erin-survivor-maker-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-v1"
+      ]
+    },
+    {
+      "deployed_bytes": 3758,
+      "deployed_sha256": "01bd5e06f7d10e7347b30d0a35c20218d543530d943e9db7aaa797a35cb9d64a",
+      "original_bytes": 3758,
+      "original_sha256": "01bd5e06f7d10e7347b30d0a35c20218d543530d943e9db7aaa797a35cb9d64a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/stages.js",
+      "source_path": "games/survivor/data/stages.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5322,
+      "deployed_sha256": "ce1502fc4668372e72a3214a1e8d899464ae67bca11cfa7b8b7c11605df5ddb5",
+      "original_bytes": 5322,
+      "original_sha256": "ce1502fc4668372e72a3214a1e8d899464ae67bca11cfa7b8b7c11605df5ddb5",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/weapons.js",
+      "source_path": "games/survivor/data/weapons.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5423,
+      "deployed_sha256": "9df0f1288b50df9f7d388119c4e390e816b529c4956a0525ee8bdcbc6f774dd9",
+      "original_bytes": 5423,
+      "original_sha256": "9df0f1288b50df9f7d388119c4e390e816b529c4956a0525ee8bdcbc6f774dd9",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/abilities.js",
+      "source_path": "games/survivor/engine/abilities.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8878,
+      "deployed_sha256": "55700761f898305d840c92e7932f9ab3ce0510eaa9a183c80f9276459758bfea",
+      "original_bytes": 8878,
+      "original_sha256": "55700761f898305d840c92e7932f9ab3ce0510eaa9a183c80f9276459758bfea",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/ability-actions.js",
+      "source_path": "games/survivor/engine/ability-actions.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 3510,
+      "deployed_sha256": "7b7fb6bccbb2037d852cabc8abd6600cb51959948880b27f6ee97ff9066fd16a",
+      "original_bytes": 3510,
+      "original_sha256": "7b7fb6bccbb2037d852cabc8abd6600cb51959948880b27f6ee97ff9066fd16a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/ability-catalog.js",
+      "source_path": "games/survivor/engine/ability-catalog.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 9510,
+      "deployed_sha256": "995810137d89868aade0661ba51ea515c0d8895c279391312a409d6b7ac3f03c",
+      "original_bytes": 9510,
+      "original_sha256": "995810137d89868aade0661ba51ea515c0d8895c279391312a409d6b7ac3f03c",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/audio.js",
+      "source_path": "games/survivor/engine/audio.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 10969,
+      "deployed_sha256": "591bf890c688064f41cf7b317a0fde5ded2775f2ff8e6022c2048feb3e265219",
+      "original_bytes": 10969,
+      "original_sha256": "591bf890c688064f41cf7b317a0fde5ded2775f2ff8e6022c2048feb3e265219",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/body-separation.js",
+      "source_path": "games/survivor/engine/body-separation.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1665,
+      "deployed_sha256": "f92bf255da85d92eb89807ec474df1f15ec0e6bbd9f6f69a310d48c4f782b0ad",
+      "original_bytes": 1665,
+      "original_sha256": "f92bf255da85d92eb89807ec474df1f15ec0e6bbd9f6f69a310d48c4f782b0ad",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/boss-ai.js",
+      "source_path": "games/survivor/engine/boss-ai.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 22493,
+      "deployed_sha256": "ecbbe13978257e872b5be350462d899a594a7206f4687cbabb1b1dd68355fc24",
+      "original_bytes": 22493,
+      "original_sha256": "ecbbe13978257e872b5be350462d899a594a7206f4687cbabb1b1dd68355fc24",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/boss.js",
+      "source_path": "games/survivor/engine/boss.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5331,
+      "deployed_sha256": "a0c6a55b96080a02ead198da81bc945111b6205479442d7bf6b83c4dad6d6160",
+      "original_bytes": 5331,
+      "original_sha256": "a0c6a55b96080a02ead198da81bc945111b6205479442d7bf6b83c4dad6d6160",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/camera-viewport.js",
+      "source_path": "games/survivor/engine/camera-viewport.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 14397,
+      "deployed_sha256": "162d248328217dcd4098b5464c17039750129b3cf0c2a0842d7af9fb27c2e5f9",
+      "original_bytes": 14397,
+      "original_sha256": "162d248328217dcd4098b5464c17039750129b3cf0c2a0842d7af9fb27c2e5f9",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/combat-damage.js",
+      "source_path": "games/survivor/engine/combat-damage.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2533,
+      "deployed_sha256": "7cf4313c7823104b4f98e81ee14503df6b10a9dd1083cc6ec5b62fbda0d0d6de",
+      "original_bytes": 2533,
+      "original_sha256": "7cf4313c7823104b4f98e81ee14503df6b10a9dd1083cc6ec5b62fbda0d0d6de",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/combat.js",
+      "source_path": "games/survivor/engine/combat.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4922,
+      "deployed_sha256": "3e705b87e3f8975ee46e5d8a588b2ce602809dd21356287ec597166999636356",
+      "original_bytes": 4922,
+      "original_sha256": "3e705b87e3f8975ee46e5d8a588b2ce602809dd21356287ec597166999636356",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/debug-tools.js",
+      "source_path": "games/survivor/engine/debug-tools.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 24193,
+      "deployed_sha256": "f81bb45091b1c8161d690ac9bb7ff18cecee5eac64b2cf1dbd66c6ac783c4018",
+      "original_bytes": 24193,
+      "original_sha256": "f81bb45091b1c8161d690ac9bb7ff18cecee5eac64b2cf1dbd66c6ac783c4018",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/effect-blocks.js",
+      "source_path": "games/survivor/engine/effect-blocks.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 10324,
+      "deployed_sha256": "bb84f95c66aaac8e1517bc529bfca9e1cbfc268ffd2df9bd5b2de2d4c8275d71",
+      "original_bytes": 10324,
+      "original_sha256": "bb84f95c66aaac8e1517bc529bfca9e1cbfc268ffd2df9bd5b2de2d4c8275d71",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/element-combat.js",
+      "source_path": "games/survivor/engine/element-combat.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 9698,
+      "deployed_sha256": "b7a9316093373c5c517048317ec487d342891b335fd329e41edd9e5bbff1468a",
+      "original_bytes": 9698,
+      "original_sha256": "b7a9316093373c5c517048317ec487d342891b335fd329e41edd9e5bbff1468a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/encounters.js",
+      "source_path": "games/survivor/engine/encounters.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5202,
+      "deployed_sha256": "aee913813a199ca738666e3b963cf01d24b489748d775359d203e846db333923",
+      "original_bytes": 5202,
+      "original_sha256": "aee913813a199ca738666e3b963cf01d24b489748d775359d203e846db333923",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/feedback.js",
+      "source_path": "games/survivor/engine/feedback.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 13404,
+      "deployed_sha256": "ca3df2d0b27a05bc5afb24f5b5f9c28f977f979831f0df7d3472d13dda660a00",
+      "original_bytes": 13404,
+      "original_sha256": "ca3df2d0b27a05bc5afb24f5b5f9c28f977f979831f0df7d3472d13dda660a00",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/gallery-encounters.js",
+      "source_path": "games/survivor/engine/gallery-encounters.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 14280,
+      "deployed_sha256": "8b0b2ac7348d8edd85f9072184e9d0e05b245bd6d9a99c8c82e99e128ae49232",
+      "original_bytes": 14280,
+      "original_sha256": "8b0b2ac7348d8edd85f9072184e9d0e05b245bd6d9a99c8c82e99e128ae49232",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/gallery.js",
+      "source_path": "games/survivor/engine/gallery.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4317,
+      "deployed_sha256": "694bf1b2c0aff841a1c38a194a1e30c00efce27385a48ed2b0ce66d74c7f1000",
+      "original_bytes": 4317,
+      "original_sha256": "694bf1b2c0aff841a1c38a194a1e30c00efce27385a48ed2b0ce66d74c7f1000",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/loadout.js",
+      "source_path": "games/survivor/engine/loadout.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 21810,
+      "deployed_sha256": "2b77233a2d1b30f0f67b07085a0ca0eda65004a80a66bb7ab010d24a56794dff",
+      "original_bytes": 21810,
+      "original_sha256": "2b77233a2d1b30f0f67b07085a0ca0eda65004a80a66bb7ab010d24a56794dff",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/loop.js",
+      "source_path": "games/survivor/engine/loop.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5500,
+      "deployed_sha256": "29e5e74870ddc309aecf3ad0b8cb2b295edceb3ef59694c1c6fa4c53e2c889c5",
+      "original_bytes": 5500,
+      "original_sha256": "29e5e74870ddc309aecf3ad0b8cb2b295edceb3ef59694c1c6fa4c53e2c889c5",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/maker-effects.js",
+      "source_path": "games/survivor/engine/maker-effects.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 872,
+      "deployed_sha256": "3c06ba26202661ff7f9a4be19edc3bae5ee02ec66eeaa1512b25d7205dba22a6",
+      "original_bytes": 872,
+      "original_sha256": "3c06ba26202661ff7f9a4be19edc3bae5ee02ec66eeaa1512b25d7205dba22a6",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/mode.js",
+      "source_path": "games/survivor/engine/mode.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 3397,
+      "deployed_sha256": "d3373a7687cc5abd9d7f70d8d80e45511fb19fff67c556d7f7f67e73d2a67eb3",
+      "original_bytes": 3397,
+      "original_sha256": "d3373a7687cc5abd9d7f70d8d80e45511fb19fff67c556d7f7f67e73d2a67eb3",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/music.js",
+      "source_path": "games/survivor/engine/music.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8707,
+      "deployed_sha256": "f641e54d38ec18b2ecad1e6cabd08fd17e2effb1195e3a4da1d0da01aa478df6",
+      "original_bytes": 8707,
+      "original_sha256": "f641e54d38ec18b2ecad1e6cabd08fd17e2effb1195e3a4da1d0da01aa478df6",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/neutral.js",
+      "source_path": "games/survivor/engine/neutral.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11512,
+      "deployed_sha256": "6b44633c5b393e6cb7e787a18172c2e8d7dd72b889a31cebcefc01f40a7ef65a",
+      "original_bytes": 11512,
+      "original_sha256": "6b44633c5b393e6cb7e787a18172c2e8d7dd72b889a31cebcefc01f40a7ef65a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/pacing.js",
+      "source_path": "games/survivor/engine/pacing.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6477,
+      "deployed_sha256": "428587b8b26b2c5855334b37ef4b4c08c0d9851211e91cd47ba35967490221fc",
+      "original_bytes": 6477,
+      "original_sha256": "428587b8b26b2c5855334b37ef4b4c08c0d9851211e91cd47ba35967490221fc",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/player-actions.js",
+      "source_path": "games/survivor/engine/player-actions.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 7112,
+      "deployed_sha256": "fac56f9cfcf001ea5dae93534e03948ae058709790ed904266266d253ad3ae2f",
+      "original_bytes": 7112,
+      "original_sha256": "fac56f9cfcf001ea5dae93534e03948ae058709790ed904266266d253ad3ae2f",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/posture.js",
+      "source_path": "games/survivor/engine/posture.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1276,
+      "deployed_sha256": "11d3147d15a77f10ced393c8cd3193092b2a9d47e50be5a183d47fecabe45573",
+      "original_bytes": 1276,
+      "original_sha256": "11d3147d15a77f10ced393c8cd3193092b2a9d47e50be5a183d47fecabe45573",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/routes.js",
+      "source_path": "games/survivor/engine/routes.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6353,
+      "deployed_sha256": "2eae8377fecdd9120abbac5b291b1093bb2842c8d54f5bcc527ddf5e63c2afb8",
+      "original_bytes": 6353,
+      "original_sha256": "2eae8377fecdd9120abbac5b291b1093bb2842c8d54f5bcc527ddf5e63c2afb8",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/run-lifecycle.js",
+      "source_path": "games/survivor/engine/run-lifecycle.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 10326,
+      "deployed_sha256": "02d63f23da63aeb702670b0fa84b5ce05078af75c23d475421ae57e3a5799291",
+      "original_bytes": 10326,
+      "original_sha256": "02d63f23da63aeb702670b0fa84b5ce05078af75c23d475421ae57e3a5799291",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/school-combat.js",
+      "source_path": "games/survivor/engine/school-combat.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5092,
+      "deployed_sha256": "6374e1b2ca093312b62584ec4662234602d638c2505c89105784e3fd51822f00",
+      "original_bytes": 5092,
+      "original_sha256": "6374e1b2ca093312b62584ec4662234602d638c2505c89105784e3fd51822f00",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/schools.js",
+      "source_path": "games/survivor/engine/schools.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8278,
+      "deployed_sha256": "aa2f70676b1d4981e6fe841d9cb241a2835d8390324a711f1bc654bc79e0b0cd",
+      "original_bytes": 8278,
+      "original_sha256": "aa2f70676b1d4981e6fe841d9cb241a2835d8390324a711f1bc654bc79e0b0cd",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/spawn.js",
+      "source_path": "games/survivor/engine/spawn.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 23465,
+      "deployed_sha256": "b95315113c8a6a17e1e94687fe0343303ea2dcbb81f66f3267d08200033716f7",
+      "original_bytes": 23099,
+      "original_sha256": "3725ab8bc13f604887eb8ac870e4498961e4ee4e4e3011ef5857d6e78ea4c0b4",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/state.js",
+      "source_path": "games/survivor/engine/state.js",
+      "transformations": [
+        "storage-key-literal: erin-survivor-settings-v3 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-settings-v3",
+        "storage-key-literal: erin-survivor-player-settings-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-player-settings-v1",
+        "storage-key-literal: erin-survivor-maker-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-best-seconds-v1",
+        "storage-key-literal: erin-survivor-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-best-seconds-v1",
+        "storage-key-literal: erin-survivor-trial-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-trial-best-seconds-v1",
+        "storage-key-literal: erin-survivor-maker-trial-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-trial-best-seconds-v1"
+      ]
+    },
+    {
+      "deployed_bytes": 4817,
+      "deployed_sha256": "365dad03e8292ee061364a57670794a09c624dc04aee0ed5127b0041563c8b04",
+      "original_bytes": 4817,
+      "original_sha256": "365dad03e8292ee061364a57670794a09c624dc04aee0ed5127b0041563c8b04",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/survival-waves.js",
+      "source_path": "games/survivor/engine/survival-waves.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1703,
+      "deployed_sha256": "787d1260a0552dcb55cd7b4107451c82a2f7313cc76dc19db8347f74f88a6d2b",
+      "original_bytes": 1703,
+      "original_sha256": "787d1260a0552dcb55cd7b4107451c82a2f7313cc76dc19db8347f74f88a6d2b",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/timing.js",
+      "source_path": "games/survivor/engine/timing.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5519,
+      "deployed_sha256": "d02bec1c8942fd0892f2073c97ce4b9c648a683c3273c711c0b4e8c7a9a3e94f",
+      "original_bytes": 5519,
+      "original_sha256": "d02bec1c8942fd0892f2073c97ce4b9c648a683c3273c711c0b4e8c7a9a3e94f",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/trial-blocks.js",
+      "source_path": "games/survivor/engine/trial-blocks.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5037,
+      "deployed_sha256": "a563e04cde904142c2537d2fbb98861bf4d170fe96eddaacf8965fea330f6eb5",
+      "original_bytes": 5037,
+      "original_sha256": "a563e04cde904142c2537d2fbb98861bf4d170fe96eddaacf8965fea330f6eb5",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/upgrade-info.js",
+      "source_path": "games/survivor/engine/upgrade-info.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 7883,
+      "deployed_sha256": "533a8a7abac58eed6141a6cb30d3e60d417f4963b10ce2273614c5e4353032da",
+      "original_bytes": 7883,
+      "original_sha256": "533a8a7abac58eed6141a6cb30d3e60d417f4963b10ce2273614c5e4353032da",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/weakpoint.js",
+      "source_path": "games/survivor/engine/weakpoint.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 7526,
+      "deployed_sha256": "3b79e25c79af728f4b19facb13488a72778a2b551df7895e93ec30f363b95e0a",
+      "original_bytes": 7526,
+      "original_sha256": "3b79e25c79af728f4b19facb13488a72778a2b551df7895e93ec30f363b95e0a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/weapon-attacks.js",
+      "source_path": "games/survivor/engine/weapon-attacks.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4803,
+      "deployed_sha256": "988c80bc9f8a04bc2beee16cec6c1c4c33044ae024028cae73d08ab8ee5731f2",
+      "original_bytes": 4803,
+      "original_sha256": "988c80bc9f8a04bc2beee16cec6c1c4c33044ae024028cae73d08ab8ee5731f2",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/weapon-catalog.js",
+      "source_path": "games/survivor/engine/weapon-catalog.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8978,
+      "deployed_sha256": "1bc41571925eea4a03dd9ffad2a8e36d143baaf870770b4d5c36e89cc69c423e",
+      "original_bytes": 8978,
+      "original_sha256": "1bc41571925eea4a03dd9ffad2a8e36d143baaf870770b4d5c36e89cc69c423e",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/weapons.js",
+      "source_path": "games/survivor/engine/weapons.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2712,
+      "deployed_sha256": "56ac15523c0fd0b82981107fb05cdb3cfe2a0114702285bbc4a361adde4823b1",
+      "original_bytes": 2712,
+      "original_sha256": "56ac15523c0fd0b82981107fb05cdb3cfe2a0114702285bbc4a361adde4823b1",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/zzfx.js",
+      "source_path": "games/survivor/engine/zzfx.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 355,
+      "deployed_sha256": "e80743f57fda89c265ca6b4266f438cef3592bf65df3444c25734e50875aaff4",
+      "original_bytes": 355,
+      "original_sha256": "e80743f57fda89c265ca6b4266f438cef3592bf65df3444c25734e50875aaff4",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/game.js",
+      "source_path": "games/survivor/game.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 14149,
+      "deployed_sha256": "a2ec7316e7d3acc936d3438b7e0f5e7945cfa59051fb782ce4f0354722c68076",
+      "original_bytes": 14149,
+      "original_sha256": "a2ec7316e7d3acc936d3438b7e0f5e7945cfa59051fb782ce4f0354722c68076",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/icons.js",
+      "source_path": "games/survivor/icons.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11296,
+      "deployed_sha256": "f959be7427c2f53302e2ad522afa715475529084588e1cbf9f39c7565ec60096",
+      "original_bytes": 11362,
+      "original_sha256": "2b8bac5cb04237cb93f9467891a09c9713f97541e25339899841e02adf717d85",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/index.html",
+      "source_path": "games/survivor/index.html",
+      "transformations": [
+        "remove four PWA/install head references",
+        "add inline preview favicon to avoid origin-root favicon request"
+      ]
+    },
+    {
+      "deployed_bytes": 8441,
+      "deployed_sha256": "590fe148d42675ee7bd5a22d8e8942a859354ba1f65f14b03afe59d39c92f21a",
+      "original_bytes": 8441,
+      "original_sha256": "590fe148d42675ee7bd5a22d8e8942a859354ba1f65f14b03afe59d39c92f21a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/input.js",
+      "source_path": "games/survivor/input.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 20027,
+      "deployed_sha256": "47f25866065d555ff674ffef5cc424bee00a98baeb64b3bac764d50a9fa7bfec",
+      "original_bytes": 20027,
+      "original_sha256": "47f25866065d555ff674ffef5cc424bee00a98baeb64b3bac764d50a9fa7bfec",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/actors.js",
+      "source_path": "games/survivor/maker/actors.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 17365,
+      "deployed_sha256": "84d5adfb2b1e2da3acf66a3afeea3b404d0b6c250171dc7c074b24e57bbd9c72",
+      "original_bytes": 17365,
+      "original_sha256": "84d5adfb2b1e2da3acf66a3afeea3b404d0b6c250171dc7c074b24e57bbd9c72",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/cards-weapons.js",
+      "source_path": "games/survivor/maker/cards-weapons.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 348,
+      "deployed_sha256": "093d3263a7f1df63a11ee2156609415112302c38dcddc030de644885af791448",
+      "original_bytes": 348,
+      "original_sha256": "093d3263a7f1df63a11ee2156609415112302c38dcddc030de644885af791448",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/index.html",
+      "source_path": "games/survivor/maker/index.html",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 258,
+      "deployed_sha256": "3f57a8ccf8c8ed6da6ae03994813d9c6407e61ee80be33499fb2df622b3b63a0",
+      "original_bytes": 258,
+      "original_sha256": "3f57a8ccf8c8ed6da6ae03994813d9c6407e61ee80be33499fb2df622b3b63a0",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/load.js",
+      "source_path": "games/survivor/maker/load.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11419,
+      "deployed_sha256": "b4337beec45992901d9ced27bbf9d479987e04645fab0db98a87ca916ae4da40",
+      "original_bytes": 11419,
+      "original_sha256": "b4337beec45992901d9ced27bbf9d479987e04645fab0db98a87ca916ae4da40",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/maker.js",
+      "source_path": "games/survivor/maker/maker.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 186,
+      "deployed_sha256": "219c20adf8b72193d2bb8f68a8a5265df8bc163399c4efc732cb04f99b2d0309",
+      "original_bytes": 186,
+      "original_sha256": "219c20adf8b72193d2bb8f68a8a5265df8bc163399c4efc732cb04f99b2d0309",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/manifest.js",
+      "source_path": "games/survivor/maker/manifest.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 10420,
+      "deployed_sha256": "e78bfa6b1c12359b11b541e263c91654a274f383172d05ba4e54d61c7a8291a6",
+      "original_bytes": 10420,
+      "original_sha256": "e78bfa6b1c12359b11b541e263c91654a274f383172d05ba4e54d61c7a8291a6",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/rules.js",
+      "source_path": "games/survivor/maker/rules.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11010,
+      "deployed_sha256": "5a0a1f43c6ce2a327c57d31bf619f336d357ebfebd3d8c82c39e28e6294ae1a8",
+      "original_bytes": 11010,
+      "original_sha256": "5a0a1f43c6ce2a327c57d31bf619f336d357ebfebd3d8c82c39e28e6294ae1a8",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/stages.js",
+      "source_path": "games/survivor/maker/stages.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 12859,
+      "deployed_sha256": "e284d002bd4fd7d1feebc3cd57989556288224e6b331a09140676ae89dae31b1",
+      "original_bytes": 12859,
+      "original_sha256": "e284d002bd4fd7d1feebc3cd57989556288224e6b331a09140676ae89dae31b1",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/style.css",
+      "source_path": "games/survivor/maker/style.css",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6552,
+      "deployed_sha256": "75cb4dcf37368121f5f36a04abcf6d2b12b99730cb15a83b48c8b4673f36a235",
+      "original_bytes": 6552,
+      "original_sha256": "75cb4dcf37368121f5f36a04abcf6d2b12b99730cb15a83b48c8b4673f36a235",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/maker/widgets.js",
+      "source_path": "games/survivor/maker/widgets.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1773,
+      "deployed_sha256": "fb67ce2eb35d19236cabb84079e86083aead98ba72abff521299bf862a4dc4dc",
+      "original_bytes": 1773,
+      "original_sha256": "fb67ce2eb35d19236cabb84079e86083aead98ba72abff521299bf862a4dc4dc",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/manifest.js",
+      "source_path": "games/survivor/manifest.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 12156,
+      "deployed_sha256": "6dca3996764042fb7dfb6dbf8a73b7444942bd6a93662ee7a93292ecd856328b",
+      "original_bytes": 12156,
+      "original_sha256": "6dca3996764042fb7dfb6dbf8a73b7444942bd6a93662ee7a93292ecd856328b",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/manual-attack.js",
+      "source_path": "games/survivor/manual-attack.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 17603,
+      "deployed_sha256": "7d1c41d58b33602fdd402c10984b1284731964ce30a4a5241f97771ea809e9cd",
+      "original_bytes": 17603,
+      "original_sha256": "7d1c41d58b33602fdd402c10984b1284731964ce30a4a5241f97771ea809e9cd",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/practice-engine.js",
+      "source_path": "games/survivor/practice-engine.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2710,
+      "deployed_sha256": "9f04c3dd05dc79e88595c6632c331ed958ca1a6bf8fdd83080cc0df0e4e57b40",
+      "original_bytes": 2710,
+      "original_sha256": "9f04c3dd05dc79e88595c6632c331ed958ca1a6bf8fdd83080cc0df0e4e57b40",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/practice-host.js",
+      "source_path": "games/survivor/practice-host.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5194,
+      "deployed_sha256": "09f0f720c905c2e7cc5498a30c2ac3ab0647291c9f7fafd46ec793b4dbdffaff",
+      "original_bytes": 5194,
+      "original_sha256": "09f0f720c905c2e7cc5498a30c2ac3ab0647291c9f7fafd46ec793b4dbdffaff",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/practice-rules.js",
+      "source_path": "games/survivor/practice-rules.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 3925,
+      "deployed_sha256": "2f8b75aefd7d008a3fa89218eaceedc35bffcae339a7efd62ff73ef131eb7149",
+      "original_bytes": 3925,
+      "original_sha256": "2f8b75aefd7d008a3fa89218eaceedc35bffcae339a7efd62ff73ef131eb7149",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/practice.css",
+      "source_path": "games/survivor/practice.css",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4425,
+      "deployed_sha256": "8e883c16d674119e667ac6e1d29a571ff6317608f2054d7f31e9b3129c9d1c81",
+      "original_bytes": 4425,
+      "original_sha256": "8e883c16d674119e667ac6e1d29a571ff6317608f2054d7f31e9b3129c9d1c81",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/practice.html",
+      "source_path": "games/survivor/practice.html",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 14085,
+      "deployed_sha256": "caa763165b2409bec8f1e3617caa0fb7646247d6a78a53c88fee4e19d818ccdc",
+      "original_bytes": 14085,
+      "original_sha256": "caa763165b2409bec8f1e3617caa0fb7646247d6a78a53c88fee4e19d818ccdc",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/preview-engine.js",
+      "source_path": "games/survivor/preview-engine.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2588,
+      "deployed_sha256": "8795d072a82ff3b82ed43d7c574c7e4c4bdb7b252eec513645c61adeb3bcc3e7",
+      "original_bytes": 2588,
+      "original_sha256": "8795d072a82ff3b82ed43d7c574c7e4c4bdb7b252eec513645c61adeb3bcc3e7",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/preview.html",
+      "source_path": "games/survivor/preview.html",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 13403,
+      "deployed_sha256": "54a681fd4103565435ff64ab713705e0395c09b86c62977fbaa3317e9147acb4",
+      "original_bytes": 13403,
+      "original_sha256": "54a681fd4103565435ff64ab713705e0395c09b86c62977fbaa3317e9147acb4",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/preview.js",
+      "source_path": "games/survivor/preview.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5299,
+      "deployed_sha256": "ba6b68e02c73fe69c20f2a9c34caab84283ca4a2938198f54953d5c1430a3c22",
+      "original_bytes": 5299,
+      "original_sha256": "ba6b68e02c73fe69c20f2a9c34caab84283ca4a2938198f54953d5c1430a3c22",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/abilities.js",
+      "source_path": "games/survivor/render/abilities.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 13328,
+      "deployed_sha256": "13c2c8b083b2aa9def07d82248abb9057f15b49ff01fa90944af403282196489",
+      "original_bytes": 13328,
+      "original_sha256": "13c2c8b083b2aa9def07d82248abb9057f15b49ff01fa90944af403282196489",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/actors.js",
+      "source_path": "games/survivor/render/actors.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 17683,
+      "deployed_sha256": "3e1845854d8273c54fa6e1a718ac1a322accf7343891e057e4e593ba96d67bb6",
+      "original_bytes": 17683,
+      "original_sha256": "3e1845854d8273c54fa6e1a718ac1a322accf7343891e057e4e593ba96d67bb6",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/art.js",
+      "source_path": "games/survivor/render/art.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 3512,
+      "deployed_sha256": "656a3742c849b3ecac6e04a31fa9e71c3329cfd8a8445d71a5ae5fc88f771b8c",
+      "original_bytes": 3512,
+      "original_sha256": "656a3742c849b3ecac6e04a31fa9e71c3329cfd8a8445d71a5ae5fc88f771b8c",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/background.js",
+      "source_path": "games/survivor/render/background.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 15011,
+      "deployed_sha256": "b388a2bce349b4c34f9365483afe3b925641c6c34b36817c07f0ca1b4e6d0447",
+      "original_bytes": 15011,
+      "original_sha256": "b388a2bce349b4c34f9365483afe3b925641c6c34b36817c07f0ca1b4e6d0447",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/boss-effects.js",
+      "source_path": "games/survivor/render/boss-effects.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 18215,
+      "deployed_sha256": "8665ed622d60aae0834134621ffdef9a0fd6b04d86d2666c5f5dfdd2f7f63d21",
+      "original_bytes": 18215,
+      "original_sha256": "8665ed622d60aae0834134621ffdef9a0fd6b04d86d2666c5f5dfdd2f7f63d21",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/clay.js",
+      "source_path": "games/survivor/render/clay.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 10000,
+      "deployed_sha256": "3ac92d7ba5f95e491a959a5a87f7b2a5ecb3d268a19ff977fa7ef0c9b153e4fc",
+      "original_bytes": 10000,
+      "original_sha256": "3ac92d7ba5f95e491a959a5a87f7b2a5ecb3d268a19ff977fa7ef0c9b153e4fc",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/effects.js",
+      "source_path": "games/survivor/render/effects.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 6885,
+      "deployed_sha256": "bc9060705560d5379a8ff02f8fa0d1d00ccedaee20e9a1e5531e7c4572ffd9cc",
+      "original_bytes": 6885,
+      "original_sha256": "bc9060705560d5379a8ff02f8fa0d1d00ccedaee20e9a1e5531e7c4572ffd9cc",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/enemy-warnings.js",
+      "source_path": "games/survivor/render/enemy-warnings.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 8142,
+      "deployed_sha256": "250e0d117a94e804d3f11195d69f7a60c8a99913b99e92d42acf4616800fdcfe",
+      "original_bytes": 8142,
+      "original_sha256": "250e0d117a94e804d3f11195d69f7a60c8a99913b99e92d42acf4616800fdcfe",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/environment.js",
+      "source_path": "games/survivor/render/environment.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11861,
+      "deployed_sha256": "37b9a48573ea552e51064cdf4010575946fc92c998354f08fa5e69d6c5fb3370",
+      "original_bytes": 11861,
+      "original_sha256": "37b9a48573ea552e51064cdf4010575946fc92c998354f08fa5e69d6c5fb3370",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/gallery.js",
+      "source_path": "games/survivor/render/gallery.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 11331,
+      "deployed_sha256": "ce684d5c83760f0994066f0b2442ad650740b4d8a54e6c1f5e3d91ccdef95078",
+      "original_bytes": 11331,
+      "original_sha256": "ce684d5c83760f0994066f0b2442ad650740b4d8a54e6c1f5e3d91ccdef95078",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/hud.js",
+      "source_path": "games/survivor/render/hud.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4467,
+      "deployed_sha256": "d5096344b82789010859d240a41e8dfade9d9ef512cfc188b693b4cfa5c4fc92",
+      "original_bytes": 4467,
+      "original_sha256": "d5096344b82789010859d240a41e8dfade9d9ef512cfc188b693b4cfa5c4fc92",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/materials.js",
+      "source_path": "games/survivor/render/materials.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5613,
+      "deployed_sha256": "36626bcd99b2c392db59b8f2768b2bd486ce9d009e1c4226caa05d03d4a25391",
+      "original_bytes": 5613,
+      "original_sha256": "36626bcd99b2c392db59b8f2768b2bd486ce9d009e1c4226caa05d03d4a25391",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/monsters.js",
+      "source_path": "games/survivor/render/monsters.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5781,
+      "deployed_sha256": "dfc0bfdd1388b26d07d3f6d53ba56d536677955b2277d2db52f19d4a8c58621a",
+      "original_bytes": 5781,
+      "original_sha256": "dfc0bfdd1388b26d07d3f6d53ba56d536677955b2277d2db52f19d4a8c58621a",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/neon.js",
+      "source_path": "games/survivor/render/neon.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5143,
+      "deployed_sha256": "9405dbefce0b4bbc95d02592b33a59d057d50f2007cd6f05758b7b019f0990e8",
+      "original_bytes": 5143,
+      "original_sha256": "9405dbefce0b4bbc95d02592b33a59d057d50f2007cd6f05758b7b019f0990e8",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/projectiles.js",
+      "source_path": "games/survivor/render/projectiles.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 2025,
+      "deployed_sha256": "ea557f5ecb28d8a5b92334c6e1f745262b7d697236a2da55004e9db5540f1e75",
+      "original_bytes": 2025,
+      "original_sha256": "ea557f5ecb28d8a5b92334c6e1f745262b7d697236a2da55004e9db5540f1e75",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/weakpoint.js",
+      "source_path": "games/survivor/render/weakpoint.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 4497,
+      "deployed_sha256": "6d275ee77838f3b19fc58d8501e26e40d936252f7cd518e6bc67cb286f3f97f6",
+      "original_bytes": 4497,
+      "original_sha256": "6d275ee77838f3b19fc58d8501e26e40d936252f7cd518e6bc67cb286f3f97f6",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/weapons-survival.js",
+      "source_path": "games/survivor/render/weapons-survival.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 7142,
+      "deployed_sha256": "2aa28c40a694f21942451bc73cadec9dba43a9ae197a66cba917ac034811bc27",
+      "original_bytes": 7142,
+      "original_sha256": "2aa28c40a694f21942451bc73cadec9dba43a9ae197a66cba917ac034811bc27",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/weapons.js",
+      "source_path": "games/survivor/render/weapons.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 12074,
+      "deployed_sha256": "303351328064c8b4ec78a25ecaa2cfe820bc6fcf3c0fef29ba525fb1aab88d22",
+      "original_bytes": 12074,
+      "original_sha256": "303351328064c8b4ec78a25ecaa2cfe820bc6fcf3c0fef29ba525fb1aab88d22",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/render/world.js",
+      "source_path": "games/survivor/render/world.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 462,
+      "deployed_sha256": "70e5fd37bf1e5114585c53083441fdaa7549ab01da88dab7ab8abe40ceac3072",
+      "original_bytes": 462,
+      "original_sha256": "70e5fd37bf1e5114585c53083441fdaa7549ab01da88dab7ab8abe40ceac3072",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/stages.js",
+      "source_path": "games/survivor/stages.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 31135,
+      "deployed_sha256": "2476dc70d02293a2c8999de98bbee6fd9be4092dc618e5d0f70e6f871c7ad613",
+      "original_bytes": 31135,
+      "original_sha256": "2476dc70d02293a2c8999de98bbee6fd9be4092dc618e5d0f70e6f871c7ad613",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/style.css",
+      "source_path": "games/survivor/style.css",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 14633,
+      "deployed_sha256": "76aa6bd7017b4ef7a60df2f6f42999724a05a8ac1a840bfe45fdc05df79f1d38",
+      "original_bytes": 14633,
+      "original_sha256": "76aa6bd7017b4ef7a60df2f6f42999724a05a8ac1a840bfe45fdc05df79f1d38",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/ui/levelup.js",
+      "source_path": "games/survivor/ui/levelup.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 7270,
+      "deployed_sha256": "0af87dfed54d2ddff5076dc02cd9e42d5433fa0b2fd011d37f2e0da6e63aa494",
+      "original_bytes": 7270,
+      "original_sha256": "0af87dfed54d2ddff5076dc02cd9e42d5433fa0b2fd011d37f2e0da6e63aa494",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/ui/settings.js",
+      "source_path": "games/survivor/ui/settings.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5838,
+      "deployed_sha256": "c3988cbb632ef82bb1a607bc958b15c4227a3a9268205b6b3a707d8209f99519",
+      "original_bytes": 5838,
+      "original_sha256": "c3988cbb632ef82bb1a607bc958b15c4227a3a9268205b6b3a707d8209f99519",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/ui/upgrade-view.js",
+      "source_path": "games/survivor/ui/upgrade-view.js",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 5566,
+      "deployed_sha256": "6055181ea5f82dab07a06ded1047e1b7d80536baef7a6eb0edab8ff9aad44e63",
+      "original_bytes": 5566,
+      "original_sha256": "6055181ea5f82dab07a06ded1047e1b7d80536baef7a6eb0edab8ff9aad44e63",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/upgrade.css",
+      "source_path": "games/survivor/upgrade.css",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 29,
+      "deployed_sha256": "464f2b456bddc18271ffcd55ab7e2fa1e8e00397e139d1516c06a76214af9786",
+      "original_bytes": 29,
+      "original_sha256": "464f2b456bddc18271ffcd55ab7e2fa1e8e00397e139d1516c06a76214af9786",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/version.json",
+      "source_path": "games/survivor/version.json",
+      "transformations": []
+    },
+    {
+      "deployed_bytes": 1369,
+      "deployed_sha256": "f5e31f61423e6992ab9b65eede6b70034d958b3c27b59cef273fe567b8782e26",
+      "original_bytes": 3950,
+      "original_sha256": "835f79d226621fb0f89c76190f0976233d9993c62728698233fdd412e2e4b9b8",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/index.html",
+      "source_path": "index.html",
+      "transformations": [
+        "replace source homepage with candidate-only landing; production is explicit external link"
+      ]
+    },
+    {
+      "deployed_bytes": 81,
+      "deployed_sha256": "be42b1547b6a18e477fa353da20280f2bdf8e1f08349c0dbe5b9e39c678171c1",
+      "original_bytes": 252,
+      "original_sha256": "221c39b64bf182ec67438204789c343f0dcfc5a3d5dce31d0e99a15c6f8986be",
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/register-sw.js",
+      "source_path": "register-sw.js",
+      "transformations": [
+        "disable registration only; no unregister or cache deletion"
+      ]
+    }
+  ],
+  "game_url": "https://stasischen.github.io/erin-preview/pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/",
+  "omitted_files": [
+    {
+      "deployed_sha256": null,
+      "original_sha256": "09c8bac66230685a02c0c434530934511779e3aae4a90e001f25749b2f84ebce",
+      "reason": "PWA/offline disabled for isolated candidate preview",
+      "source_path": "sw.js"
+    },
+    {
+      "deployed_sha256": null,
+      "original_sha256": "7d039628f551c1df8bfe9c3d25c2e97f3c06a3e32e4ed0991cfe95cac18aa9b1",
+      "reason": "PWA/offline disabled for isolated candidate preview",
+      "source_path": "manifest.webmanifest"
+    }
+  ],
+  "pr": 113,
+  "project_repo": "stasischen/erin",
+  "review_scope": "static deployment adaptation only; not gameplay or PR approval",
+  "schema_version": 1,
+  "source_commit": "5607ab95ef2a1fb6bdda9528dc6713b58654c4c9",
+  "storage_audit": [
+    {
+      "line": 625,
+      "source": "const raw = localStorage.getItem(KEY);",
+      "source_path": "games/survivor/data/schema.js"
+    },
+    {
+      "line": 636,
+      "source": "if (result.valid) { try { localStorage.setItem(KEY, JSON.stringify(result.data)); } catch (_) { result.valid = false; result.errors.push('這台裝置無法儲存，請允許本機儲存後再試'); } }",
+      "source_path": "games/survivor/data/schema.js"
+    },
+    {
+      "line": 78,
+      "source": "try { localStorage.setItem(RECORD_KEY, String(bestRecord)); } catch (_) { /* 無法儲存紀錄時不影響結算 */ }",
+      "source_path": "games/survivor/engine/run-lifecycle.js"
+    },
+    {
+      "line": 79,
+      "source": "const saved = JSON.parse(localStorage.getItem(SETTINGS_KEY) || \"{}\");",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 98,
+      "source": "const raw=localStorage.getItem(PLAYER_SETTINGS_KEY);",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 100,
+      "source": "const readLegacy=key=>{try{return JSON.parse(localStorage.getItem(key) || 'null');}catch(_){return null;}};",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 108,
+      "source": "try {localStorage.setItem(PLAYER_SETTINGS_KEY,JSON.stringify(result));} catch (_) {}",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 120,
+      "source": "try { if (!PREVIEW_MODE) localStorage.setItem(PLAYER_SETTINGS_KEY, JSON.stringify(SurvivorData.normalizePlayer(gameSettings))); } catch (_) { /* 儲存空間不可用時仍可正常遊玩 */ }",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 123,
+      "source": "try { const value = Number(localStorage.getItem(RECORD_KEY)); return Number.isFinite(value) && value > 0 ? value : 0; } catch (_) { return 0; }",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 131,
+      "source": "try {if(!PREVIEW_MODE)saved=JSON.parse(localStorage.getItem(custom?MAKER_TRIAL_RECORD_KEY:TRIAL_RECORD_KEY)||'{}');}catch(_){}",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "line": 140,
+      "source": "try {if(!PREVIEW_MODE)localStorage.setItem(custom?MAKER_TRIAL_RECORD_KEY:TRIAL_RECORD_KEY,JSON.stringify(next));}catch(_){}",
+      "source_path": "games/survivor/engine/state.js"
+    }
+  ],
+  "storage_keys": {
+    "erin-survivor-best-seconds-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-best-seconds-v1",
+    "erin-survivor-maker-best-seconds-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-best-seconds-v1",
+    "erin-survivor-maker-trial-best-seconds-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-trial-best-seconds-v1",
+    "erin-survivor-maker-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-v1",
+    "erin-survivor-player-settings-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-player-settings-v1",
+    "erin-survivor-settings-v3": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-settings-v3",
+    "erin-survivor-trial-best-seconds-v1": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-trial-best-seconds-v1"
+  },
+  "storage_prefix": "erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:",
+  "transformations": [
+    {
+      "changes": [
+        "storage-key-literal: erin-survivor-maker-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-v1"
+      ],
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/data/schema.js",
+      "source_path": "games/survivor/data/schema.js"
+    },
+    {
+      "changes": [
+        "storage-key-literal: erin-survivor-settings-v3 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-settings-v3",
+        "storage-key-literal: erin-survivor-player-settings-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-player-settings-v1",
+        "storage-key-literal: erin-survivor-maker-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-best-seconds-v1",
+        "storage-key-literal: erin-survivor-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-best-seconds-v1",
+        "storage-key-literal: erin-survivor-trial-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-trial-best-seconds-v1",
+        "storage-key-literal: erin-survivor-maker-trial-best-seconds-v1 -> erin-preview:pr-113:5607ab95ef2a1fb6bdda9528dc6713b58654c4c9:erin-survivor-maker-trial-best-seconds-v1"
+      ],
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/engine/state.js",
+      "source_path": "games/survivor/engine/state.js"
+    },
+    {
+      "changes": [
+        "remove four PWA/install head references",
+        "add inline preview favicon to avoid origin-root favicon request"
+      ],
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/games/survivor/index.html",
+      "source_path": "games/survivor/index.html"
+    },
+    {
+      "changes": [
+        "disable registration only; no unregister or cache deletion"
+      ],
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/register-sw.js",
+      "source_path": "register-sw.js"
+    },
+    {
+      "changes": [
+        "reuse existing immutable shared root file"
+      ],
+      "path": "index.html",
+      "source_path": null
+    },
+    {
+      "changes": [
+        "replace source homepage with candidate-only landing; production is explicit external link"
+      ],
+      "path": "pr-113/5607ab95ef2a1fb6bdda9528dc6713b58654c4c9/index.html",
+      "source_path": "index.html"
+    },
+    {
+      "changes": [
+        "reuse existing immutable shared root file"
+      ],
+      "path": ".nojekyll",
+      "source_path": null
+    },
+    {
+      "changes": [
+        "reuse existing immutable shared root file"
+      ],
+      "path": "README.md",
+      "source_path": null
+    }
+  ],
+  "version": "20261104g"
+}
